@@ -16,12 +16,12 @@
 
 */
 @font-face {
-	font-family: Augestina;
-	src: url('/fonts/Agustina.otf');
+	font-family: Marck Script;
+	src: url('/fonts/MarckScript-Regular.ttf');
 }
 
 #nav-title {
-	font-family: Augestina;
+	font-family: Marck Script;
 	text-transform: capitalize;
 }
 
