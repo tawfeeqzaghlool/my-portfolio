@@ -30,11 +30,11 @@ export const skillsSection = {
 			lottieAnimationFile: "/lottie/skills/fullstack.json", // Path of Lottie Animation JSON File
 			skills: [
 				emoji(
-					"⚡ Building responsive Single-Page-Apps (SPA) & PWA in React.js"
+					"⚡ Building responsive Single-Page-Apps (SPA) & PWA in JavaScript Libraries ReactJs and Angular"
 				),
-				emoji("⚡ Building responsive static websites using Next.js"),
+				emoji("⚡ Building responsive static websites using different framework like NextJs"),
 				emoji(
-					"⚡ Building RESTful APIs in Django & Django REST Framework"
+					"⚡ Building RESTful APIs in Django & Django REST Framework, and Flask"
 				),
 			],
 			softwareSkills: [
@@ -178,7 +178,7 @@ export const experience = [
 		company: "Udacity",
 		companylogo: "/img/icons/common/udacity.png",
 		date: "June 2021 – March 2022",
-		desc: "Designed +6 front end applications using HTML5, CSS3, JavaScript, jQuery, Bootstrap, XML, SAAS, LESS, DOM. Managed the authentication and authorization to Rest services by exchanging Access tokens using OAUTH2.0. Build a solid database with MYSQL, POSTGRES, PL/SQL MongoDB.",
+		desc: "Designed +6 web applications using Python, PHP, Java, HTML5, CSS3, JavaScript, jQuery, Bootstrap, XML, SAAS, LESS, DOM. Managed the authentication and authorization to Rest services by exchanging Access tokens using OAUTH2.0. Build a solid database with MYSQL, POSTGRES, PL/SQL MongoDB.",
 	},
 	{
 		role: "Project Manager",
