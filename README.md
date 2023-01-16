@@ -35,7 +35,7 @@ From your command line, clone and run developer-portolio:
 $ git clone https://github.com/tawfeeqzaghlool/my-portfolio
 
 # Go into the repository
-$ cd developer-portfolio
+$ cd my-portfolio
 
 # Install dependencies
 $ yarn
