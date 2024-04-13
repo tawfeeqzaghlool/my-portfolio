@@ -16,7 +16,7 @@ const Projects = () => {
 					<div className="pl-4">
 						<h4 className="display-3 text-info">Projects</h4>
 							<p className="lead">
-							Dive into my projects. (Details on click)
+							 Dive into my projects. (Details on click)
 							</p>
 					</div>
 				</div>
