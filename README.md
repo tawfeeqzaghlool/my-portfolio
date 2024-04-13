@@ -1,66 +1,114 @@
-<h1 align="center">Welcome to my Portfolio Source Code 👋</h1>
+# Tawfeeq Zaghlool's Portfolio Source Code
 
-## Software Developer Portfolio Template built with Next.js, bootstrap that helps me showcase my work and skills as a software developer.
+This portfolio template leverages Next.js, React, and React-DOM, ensuring compatibility with recent versions. (Note: Minimum required versions: Next.js v14.2.1, React ^18, React-DOM ^18)
+
+## Key Features
+
+- Modern and responsive design
+- Easy to customize with your own content
+- Highlight your skills, projects, and experience
 
 ## Sections
 
-✔️ Summary and About me\
-✔️ Skills\
-✔️ Education\
-✔️ Work Experience\
-✔️ Feedbacks\
-✔️ Projects\
-✔️ Github Profile
+- Summary & About Me
+- Skills
+- Education & Certificates
+- Work Experience
+- Feedbacks
+- Projects
+- GitHub Profile
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+### Prerequisites
 
-You'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer.
-<br>
+- [Git](https://git-scm.com/downloads)
+- [Node.js](https://nodejs.org/en/download) (version compatible with Next.js v14.2.1 - check Next.js documentation for details) with npm or yarn installed
+- Basic understanding of Git and Node.js is recommended.
+
 **For Windows** Install Visual C++ Build Environment: [Visual Studio Build Tools](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=BuildTools)
 
-```
-node@v10.16.0 or higher
-npm@6.9.0 or higher
-git@2.17.1 or higher
-```
+| Tool   | Version           |
+|--------|-------------------|
+| Node.js| v18.20.1 or higher|
+| npm    | v10.5.0 or higher |
+| Git    | v2.44.0 or higher |
 
 ## How To Use
 
+### Steps
+
 From your command line, clone and run developer-portolio:
 
+- **Clone this repository**
+
 ```bash
-# Clone this repository
-$ git clone https://github.com/tawfeeqzaghlool/my-portfolio
-
-# Go into the repository
-$ cd my-portfolio
-
-# Install dependencies
-$ yarn
-
-#Start's development server
-$ yarn dev
+git clone https://github.com/tawfeeqzaghlool/my-portfolio
 ```
+
+- **Navigate to the repository**
+
+```bash
+cd my-portfolio
+```
+
+- **Install dependencies** (you can use npm or yarn instead of pnpm)
+
+```bash
+pnpm install
+```
+
+- **Start the development server**
+
+```bash
+pnpm dev
+```
+
 #### Using Emojis
 
-For adding emoji 😃 into the texts in `Portfolio.js`, use the `emoji()` function and pass the text you need as an argument. This would help in keeping emojis compatible across different browsers and platforms.
+Emojis can add personality to your portfolio text. Here's how to add static emojis (copy and paste):
+
+1. Visit a website like [Emojipedia](https://emojipedia.org/)
+2. Find the emoji you want to use.
+3. Copy and paste the emoji directly into your Portfolio.js file.
+
+(Note: This approach works for static emojis. For interactive emoji selection, consider using a library like emoji-picker-react)
 
 ## Technologies Used
 
--   [Next.js](https://nextjs.org/)
--   [axios](https://www.npmjs.com/package/axios)
--   [reactstrap](https://reactstrap.github.io/)
--   [react-reveal](https://www.react-reveal.com/)
--   [react-lottie](https://www.npmjs.com/package/react-lottie)
--   [react-easy-emoji](https://github.com/appfigures/react-easy-emoji)
--   [react-headroom](https://github.com/KyleAMathews/react-headroom)
--   [color-thief](https://github.com/lokesh/color-thief)
+- [Next.js](https://nextjs.org/)
+- React
+- React-DOM
+- [axios](https://www.npmjs.com/package/axios) (for making API requests)
+- UI Libraries:
+*-* [reactstrap](https://reactstrap.github.io/)
+*-* [headroomjs](https://wicky.nillia.ms/headroom.js/)
+- [color-thief](https://github.com/lokesh/color-thief)
+
+## Animation Libraries
+
+- react-awesome-reveal
+- react-lottie
+- react-card-flip
+- framer-motion
+- react-headroom (for sticky headers)
 
 ## Illustrations
 
--   [Lottie File Source](https://lottiefiles.com)
+([Lottie Files](https://lottiefiles.com/))
+
+## Animations
+
+([Framer Motion](https://www.framer.com/motion/))
 
 ## Icons
-Iconify Icons are used in skill section. You can find all the icons here: [Iconify](https://icon-sets.iconify.design/).
+
+Iconify Icons are used in the skill section. All icons are here: [Iconify](https://icon-sets.iconify.design/).
+
+## Screenshot
+
+![Alt text](/img/icons/common/screenshot.jpg)
+
+## Contact
+
+Feel free to reach out to me at [tawfeeq.zaghlool@gmail.com] or connect with me on social media ([LinkedIn](http://linkedin.com/in/tawfeeqzaghlool))

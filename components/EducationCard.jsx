@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, CardBody, Badge } from "reactstrap";
 
-import { Fade } from "react-reveal";
+import { Fade } from "react-awesome-reveal";
 
 const EducationCard = ({ education }) => {
 	return (
@@ -17,19 +17,7 @@ const EducationCard = ({ education }) => {
 							<Badge color="info" className="mr-1">
 								{education.duration}
 							</Badge>
-							{ education.grade && (
-								<Badge color="primary" className="mr-1">
-									{education.grade}
-								</Badge>
-							)}
 							<p className="description mt-3">{education.desc}</p>
-							<ul>
-								{education.descBullets
-									? education.descBullets.map((desc) => {
-											return <li key={desc}>{desc}</li>;
-									  })
-									: null}
-							</ul>
 						</div>
 					</div>
 				</CardBody>

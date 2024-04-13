@@ -1,12 +1,10 @@
 import React from "react";
-
 import { projects } from "../portfolio";
 import { Container, Row } from "reactstrap";
 import ProjectsCard from "../components/ProjectsCard";
-import { Fade } from "react-reveal";
 
 const Projects = () => {
-	return projects && (
+  return projects && (
 		<section className="section section-lg">
 			<Container>
 				<div className="d-flex p-4">
@@ -17,6 +15,9 @@ const Projects = () => {
 					</div>
 					<div className="pl-4">
 						<h4 className="display-3 text-info">Projects</h4>
+							<p className="lead">
+							Dive into my projects. (Details on click)
+							</p>
 					</div>
 				</div>
 				<Row className="row-grid align-items-center">
@@ -30,3 +31,5 @@ const Projects = () => {
 };
 
 export default Projects;
+
+            

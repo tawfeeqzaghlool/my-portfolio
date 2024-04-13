@@ -1,6 +1,6 @@
 import { Icon } from "@iconify/react";
 import React, { Fragment } from "react";
-import { Fade } from "react-reveal";
+import { Fade } from "react-awesome-reveal";
 import { Col, Container, Row, UncontrolledTooltip } from "reactstrap";
 import DisplayLottie from "../components/DisplayLottie";
 import { skillsSection } from "../portfolio";
@@ -8,9 +8,12 @@ import { skillsSection } from "../portfolio";
 const Skills = () => {
 	return skillsSection && (
 		<Container className="text-center my-5 section section-lg">
+			<Fade left duration={2000}>
 			<h1 className="h1">{skillsSection.title}</h1>
 			<p className="lead">{skillsSection.subTitle}</p>
-			{skillsSection.data.map((section, index) => {
+			</Fade>
+			{skillsSection.data.map((section, index) => 
+			{
 				return (
 					<Row className="my-5" key={index}>
 						<Col lg="6" className="order-2 order-lg-1">
@@ -23,12 +26,14 @@ const Skills = () => {
 						<Col lg="6" className="order-1 order-lg-2">
 							<Fade right duration={2000}>
 								<h3 className="h3 mb-2">{section.title}</h3>
+								<p className="lead">{section.description}</p>
 								<div className="d-flex justify-content-center flex-wrap mb-2">
 									{section.softwareSkills.map((skill, i) => {
 										return (
 											<Fragment key={i}>
+												<Fade>
 												<div
-													className="icon icon-lg icon-shape shadow-sm rounded-circle m-1"
+													className="icon icon-lg icon-shape shadow-sm rounded-circle m-1 skill-icon-animated"
 													id={skill.skillName.replace(/\s/g, '')}
 												>
 													<Icon
@@ -45,14 +50,17 @@ const Skills = () => {
 												>
 													{skill.skillName}
 												</UncontrolledTooltip>
+												</Fade>
 											</Fragment>
 										);
 									})}
 								</div>
-								<div>
+								<div className="text-justify">
+									<Fade>
 									{section.skills.map((skill, i) => {
 										return <p key={i}>{skill}</p>;
 									})}
+									</Fade>
 								</div>
 							</Fade>
 						</Col>

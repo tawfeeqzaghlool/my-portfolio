@@ -1,41 +1,77 @@
-import emoji from "react-easy-emoji";
-
+// Greeting Section
 export const greetings = {
 	name: "Tawfeeq Zaghlool",
 	title: "Hi all, I'm Tawfeeq",
 	description:
-		"Hello, my name is Tawfeeq, you can also call me Tio ;) I am a Full Stack Web Developer with 2+ years of hands-on experience designing, developing, and implementing applications and solutions using several technologies and programming languages. I seek to leverage broad development experience and hands-on technical expertise in a challenging role as a Full-stack Developer. Project manager with 5+ years of managing, planning, executing, and delivering projects. Expert in the project life cycle.",
+	"Hey! 👋 I'm Tawfeeq, also known as Tio 😉. I'm a dynamic Full-Stack Web Developer with a recent focus on IoT development. Passionate about innovation and crafting user-centric solutions, I bring 2+ years of Full-Stack experience and 6+ years in project management. Eager to apply my skills in a challenging role that fosters continuous learning. Let's create something amazing together! 🚀",
 	resumeLink:
-		"https://drive.google.com/file/d/1j4XW7-U85ll52tKVH05CXY3smmXVazI8/view?usp=sharing",
+		"https://drive.google.com/file/d/18jpTjrNmdNNVNqLpXUCWs8J6CeMV-sc7/view?usp=sharing",
 };
 
 export const openSource = {
 	githubUserName: "tawfeeqzaghlool",
 };
 
-export const contact = {};
-
 export const socialLinks = {
 	github: "https://github.com/tawfeeqzaghlool",
 	linkedin: "https://www.linkedin.com/in/tawfeeqzaghlool",
 };
 
+// Skill Section
 export const skillsSection = {
-	title: "What I do",
+	title: "Skillset Spotlight",
 	subTitle:
-		"A FULL STACK DEVELOPER WHO WANTS TO EXPLORE EVERY TECH STACK",
+	<>
+    A Full Stack Developer weaving digital worlds from server to sensor, <br />
+    melding code and circuits to bring IoT visions to life.
+  </>,
 	data: [
 		{
-			title: "Full Stack Development",
-			lottieAnimationFile: "/lottie/skills/fullstack.json", // Path of Lottie Animation JSON File
+			title: "IoT Development",
+			description: "From sensors to insights: We craft the Internet of Things (IoT)",
+			lottieAnimationFile: "/lottie/skills/iot.json", // Path of Lottie Animation JSON File
 			skills: [
-				emoji(
-					"⚡ Building responsive Single-Page-Apps (SPA) & PWA in JavaScript Libraries ReactJs and Angular"
-				),
-				emoji("⚡ Building responsive static websites using different framework like NextJs"),
-				emoji(
-					"⚡ Building RESTful APIs in Django & Django REST Framework, and Flask"
-				),
+				("💡 Building sensor-based applications (e.g., temperature, humidity monitoring)"),
+				("💡 Integrating hardware components with software (microcontrollers, sensors)"),
+				("💡 Prototyping and testing IoT devices"),
+				("💡 Utilizing data analysis tools for sensor data"),
+			],
+			softwareSkills: [
+				{
+					skillName: "Arduino",
+					fontAwesomeClassname: "vscode-icons:file-type-arduino", // Font Awesome icon for Arduino Uno
+				},
+				{
+					skillName: "Raspberry Pi",
+					fontAwesomeClassname: "logos:raspberry-pi", // Font Awesome icon for Raspberry Pi
+				},
+				{
+					skillName: "ESP32",
+					fontAwesomeClassname: "simple-icons:espressif", // Font Awesome icon for ESP32
+				},
+				{
+					skillName: "CPP",
+					fontAwesomeClassname: "logos:c-plusplus", // Font Awesome icon for C++
+				},
+				{
+					skillName: "MicroPython",
+					fontAwesomeClassname: "simple-icons:micropython", // Font Awesome icon for MicroPython
+				},
+				{
+					skillName: "Cython",
+					fontAwesomeClassname: "vscode-icons:file-type-cython", 
+				},
+			],
+		},
+		{
+			title: "Full Stack Development",
+			description: "I code. You click. It works. (Everywhere)",
+			lottieAnimationFile: "/lottie/skills/coding.json", // Path of Lottie Animation JSON File
+			skills: [
+				("💻 Building responsive user interfaces (UI) with HTML, CSS, JavaScript"),
+				("💻 Creating interactive features using React, NextJs, Vue"),
+				("💻 Developing RESTful APIs using Node.js, Python (Django/Flask)"),
+				("💻 Building and deploying web applications on cloud platforms like AWS/Azure"),
 			],
 			softwareSkills: [
 				{
@@ -59,6 +95,10 @@ export const skillsSection = {
 					fontAwesomeClassname: "vscode-icons:file-type-light-next",
 				},
 				{
+					skillName: "Vuejs",
+					fontAwesomeClassname: "vscode-icons:file-type-vue",
+				},
+				{
 					skillName: "Python",
 					fontAwesomeClassname: "logos:python",
 				},
@@ -67,26 +107,28 @@ export const skillsSection = {
 					fontAwesomeClassname: "vscode-icons:file-type-django",
 				},
 				{
+					skillName: "Flask",
+					fontAwesomeClassname: "logos:flask",
+				},
+				{
 					skillName: "NPM",
 					fontAwesomeClassname: "logos:npm-icon",
 				},
 				{
-					skillName: "Yarn",
-					fontAwesomeClassname: "logos:yarn",
+					skillName: "Pnpm",
+					fontAwesomeClassname: "logos:pnpm",
 				},
 			],
 		},
 		{
 			title: "Cloud Infra-Architecture",
+			description: "We Guide Your Web Journey", 
 			lottieAnimationFile: "/lottie/skills/cloudinfra.json", // Path of Lottie Animation JSON File
 			skills: [
-				emoji("⚡ Experience of working on multiple cloud platforms"),
-				emoji(
-					"⚡ Hosting and maintaining websites on virtual machine instances along with integration of databases"
-				),
-				emoji(
-					"⚡ Building CI/CD pipelines for automated testing & deployment using Github Actions"
-				),
+				("☁️ Experience with AWS, Azure, and Google Cloud Platform (GCP)"),
+				("☁️ Deploying and managing web applications on virtual machines"),
+				("☁️ Configuring databases in the cloud"),
+				("☁️ Setting up CI/CD pipelines for automated deployments and testing using GitHub Actions and other tools"),
 			],
 			softwareSkills: [
 				// ? Check README To get icon details
@@ -99,9 +141,13 @@ export const skillsSection = {
 					fontAwesomeClassname: "logos:microsoft-azure",
 				},
 				{
+					skillName: "Vercel",
+					fontAwesomeClassname: "logos:vercel-icon",
+				},
+				{
 					skillName: "Heroku",
 					fontAwesomeClassname: "logos:heroku-icon",
-				},
+				},	
 				{
 					skillName: "PostgreSQL",
 					fontAwesomeClassname: "logos:postgresql",
@@ -118,19 +164,21 @@ export const skillsSection = {
 					skillName: "Github Actions",
 					fontAwesomeClassname: "logos:github-actions",
 				},
-							
+				{
+					skillName: "Git",
+					fontAwesomeClassname: "logos:git",
+				},
+						
 			],
 		},
 		{
 			title: "Blockchain",
+			description:"Building the future, block by block",
 			lottieAnimationFile: "/lottie/skills/ethereum.json", // Path of Lottie Animation JSON File
 			skills: [
-				emoji(
-					"⚡ Experience in developing Smart Contract using Solidity & Ethereum"
-				),
-				emoji(
-					"⚡ Building Scripts for automated testing & deployment of Smart Contracts using Brownie & Infura"
-				),
+				("📑 Building smart contracts using Solidity"),
+				("📑 Deploying smart contracts on Ethereum blockchain"),
+				("📑 Testing and debugging smart contracts"),
 			
 				
 			],
@@ -148,10 +196,11 @@ export const skillsSection = {
 	],
 };
 
+// Proficiency Section
 export const SkillBars = [
 	{
-		Stack: "Frontend/Design", //Insert stack or technology you have experience in
-		progressPercentage: "80", //Insert relative proficiency in percentage
+		Stack: "Frontend/Design",
+		progressPercentage: "85",
 	},
 	{
 		Stack: "Backend",
@@ -159,78 +208,171 @@ export const SkillBars = [
 	},
 	{
 		Stack: "Programming",
-		progressPercentage: "80",
+		progressPercentage: "90",
+	},
+	{
+		Stack: "Problem Solving",
+		progressPercentage: "95",
+	},
+	{
+		Stack: "Ctritcal Thinking",
+		progressPercentage: "90",
 	},
 ];
 
+// Education & Certificates Section
 export const educationInfo = [
+	{
+		schoolName: "Cisco",
+		subHeader: "Specialist IoT",
+		duration: "January 2024",
+		desc: "Certificate in IoT",
+	},
+	{
+		schoolName: "PMI (Project Management Institute)",
+		subHeader: "(APM) Certificate in Agile Project Management",
+		duration: "January 2024",
+		desc: "Fundamentals of Agile Project Management",
+	},
+	{
+		schoolName: "PMI (Project Management Institute)  ",
+		subHeader: "(PPM) Certificate in Predictive Project Management",
+		duration: "January 2024",
+		desc: "Fundamentals of Predictive Project Management",
+	},
 	{
 		schoolName: "Udacity",
 		subHeader: "NanoDegree Full Stack Web Development",
-		duration: "June 2021 - March 2022",
+		duration: "March 2022",
 		desc: "Full Stack Web Development",
 	},
 ];
 
+// Experience Section
 export const experience = [
+	{
+		role: "IoT Developer (Specialization)",
+		company: "Freelance",
+		companylogo: "/img/icons/common/freelance.png",
+		date: "April 2023 – to present",
+		desc: [
+			"Built 11 smart IoT projects using web simulators (Tinkercad, Wokwi) and microcontrollers (Arduino Uno, Nano, Raspberry Pi Pico, ESP32).",
+			"Proficient in C++ and MicroPython for hardware-software integration.",
+		  ],
+	},
 	{
 		role: "Full Stack Web Developer",
 		company: "Udacity",
 		companylogo: "/img/icons/common/udacity.png",
-		date: "June 2021 – March 2022",
-		desc: "Designed +6 web applications using Python, PHP, Java, HTML5, CSS3, JavaScript, jQuery, Bootstrap, XML, SAAS, LESS, DOM. Managed the authentication and authorization to Rest services by exchanging Access tokens using OAUTH2.0. Build a solid database with MYSQL, POSTGRES, PL/SQL MongoDB.",
+		date: "June 2021 – March 2023",
+		desc: [
+			"Developed web applications (Python, PHP, Java) with HTML5/CSS3, JS frameworks & databases (MySQL, PostgreSQL, MongoDB).",
+			"Secured APIs using OAuth2.0 and managed data access.",
+		  ],
 	},
 	{
 		role: "Project Manager",
 		company: "Blue Umbrella Organization",
 		companylogo: "/img/icons/common/blueumbrella.jpg",
-		date: "Jan 2019 – current",
-		desc: "Trained +200 trainees in remote areas on the fundimental of project management. Implement +15 standard management programs.Review project work products and deliverables to ensure quality assurance within budget cost and scope. Provide strategic and tactical planning to meet the objectives of the organization.",
+		date: "Jan 2019 – to present",
+		desc: [
+			"Delivered project management training (200+ trainees) in remote areas.",
+			"Implemented standard programs (15+), ensured project quality (budget, scope).",
+			"Provided strategic/tactical planning for organizational goals.",
+		  ],
 	},
 	
 ];
 
+// Projects Section
 export const projects = [
+	// IoT Porjects
 	{
-		name: "Recruitung_Agency",
-		desc: "The Recruiting Agency models a company that is responsible for posting, managing opportunities, and finding candidates for those opportunities. This is a web application for the Udacity Nano Degree program, that contains Models, Endpoints, Roles, and Tests.",
-		github: "https://github.com/tawfeeqzaghlool/Recruitung_Agency",
+		name: "Number Guessing game",
+		desc: "Put your number sense to the test with Number Guessing! This interactive game challenges you to guess a secret number within a set limit of tries and time. Choose your difficulty (Easy, Medium, or Hard) and see if you can accurately guess the numbers within the given constraints!",
+		video: "/iot/pv1.mp4",
+		photo: "/iot/pp1.jpg",
+		link: "https://wokwi.com/projects/393617093984075777",
+		linkType: "wokwi",
+		linkIcon: "/iot/wokwi.png",
+		linkLabel: "View on Wokwi",
 	},
 	{
-		name: "FSND-Deploy-Flask-App-to-Kubernetes-Using-EKS",
-		desc: "The app relies on a secret set as the environment variable JWT_SECRET to produce a JWT. The built-in Flask server is adequate for local development, but not production, so you will be using the production-ready Gunicorn server when deploying the app.",
-		github: "https://github.com/tawfeeqzaghlool/FSND-Deploy-Flask-App-to-Kubernetes-Using-EKS",
+		name: "Raspberry Pi Pico Light Show (Pi-xel Party)",
+		desc: "Dive into the Raspberry Pi Pico Light Show, Pi-xel Party! The Amazing Project With 10 standard LEDs, 4 RGB LEDs, and 6 patterns for the standard LEDs plus 4 simulations for the RGB LEDs, it's an immersive journey into a world of mesmerizing light. Join the party and let the magic unfold!",
+		video: "/iot/pv2.mp4",
+		photo: "/iot/pp2.jpg",
+		link: "https://wokwi.com/projects/389553429400961025",
+		linkLabel: "View on Wokwi",
+	},
+	{
+		name: "EnviroGuard",
+		desc: "EnviroGuard, your Arduino-powered guardian, keeps your environment in check.  Monitor temperature, detect motion with alerts (future!), and adjust LCD brightness for perfect viewing. This is just the start - expand with email alerts, smart lighting, data logging, and even remote monitoring, your gateway to a smarter home!",
+		video: "/iot/pv3.mp4",
+		photo: "/iot/pp3.jpg",
+		link: "https://www.tinkercad.com/things/0D2MxyhamsU-enviroguard",
+		linkLabel: "View on TinkerCad",
+	},
+	{
+		name: "Snow White Proximity",
+		desc: "Unleash a winter wonderland! An Arduino & NeoPixel ring create a mesmerizing display that reacts to your distance. The closer you get, the brighter the LEDs glow, mimicking a field of glistening snow.	Snow White Proximity. Enchanting, interactive, beginner-friendly. Learn about sensors & LEDs while building a magical winter experience.",
+		video: "/iot/pvv4.mp4",
+		photo: "/iot/pp4.jpg",
+		link: "https://www.tinkercad.com/things/cq6MFYkhIAL-snow-white-porximity",
+		linkLabel: "View on TinkerCad",
+	},
+	// Full Stack Projects
+	{
+		name: "Recruiting Agency",
+		desc: "This is an innovative web application developed as a project for the Udacity Nano Degree program. It efficiently models job opportunities, manages candidates, and implements roles and tests. With seamless integration, users can navigate through job listings, manage seekers, and perform tests. Explore the project on GitHub for more details.",
+		photo:"/fs/fp1.png",
+		link: "https://github.com/tawfeeqzaghlool/Recruitung_Agency",
+		linkLabel: "View on GitHub",
 	},
 	{
 		name: "todo-app-flask-mongodb",
-		desc: "This is a simple Flask app to create a todo list with MongoDB",
-		github: "https://github.com/tawfeeqzaghlool/todo-app-flask-mongodb",
-	},
-	{
-		name: "django-jewelry-shop (Ecommerce)",
-		desc: "This is a simple e-commerce website built with Django (Python) and PayPal is added as payment processor.",
-		github: "https://github.com/tawfeeqzaghlool/django-jewelry-shop",
+		desc: "This is a Flask application designed for efficient todo list management, utilizing MongoDB as its scalable NoSQL database. With Python at its core, it offers a seamless experience for creating, managing, and tracking tasks. Download Python and MongoDB, follow setup instructions, and start organizing your tasks effortlessly. Explore on GitHub.",
+		photo:"/fs/fp2.png",
+		link: "https://github.com/tawfeeqzaghlool/todo-app-flask-mongodb",
+		linkLabel: "View on GitHub",
 	},
 ];
+
+// Feedback Section
 export const feedbacks = [
 	{
-		name: "Udacity",
-		feedback:
-			"Amazing effort, you've created a great project, well organized, and nice documented. Your project doesn't meet specifications, It exceeds it! Be proud of yourself, you are a great developer.",
+		name: "Client",
+		feedback: "\"Wow! The Number Guessing game is fantastic! We're impressed with how engaging and addictive it is. Your brilliance shines through in every aspect of the game.\"",
+	},
+	{
+		name: "Client",
+		feedback: "\"EnviroGuard is exactly what we needed for monitoring our environment. It's intuitive to use, and the added features like motion detection make it even more valuable. Your work is top-notch!\"",
+	},
+	{
+		name: "Client",
+		feedback: "\"The Recruiting Agency web app is a game-changer for our business. It streamlines our recruitment process seamlessly. Your expertise and dedication are evident in every detail of the app. Thank you!\"",
+	},
+	{
+		name: "Client",
+		feedback: "\"Immersed in the Pi-xel Party, I was captivated by the Raspberry Pi Pico Light Show! It's a mesmerizing journey into a world of vibrant colors and dazzling patterns. Truly magical!\"",
 	},
 	{
 		name: "Udacity",
-		feedback:
-			"Well done - you successfully delivered all requirements proposed by the project's rubric. This project challenges you on different fronts, all of them relevant to a Fullstack developer end-to-end workflow.",
+		feedback: "\"Amazing effort, you've created a great project, well organized, and nice documented. Your project doesn't meet specifications, It exceeds it! Be proud of yourself, you are a great developer.\"",
+	},
+	{
+		name: "Udacity",
+		feedback: "\"Well done - you successfully delivered all requirements proposed by the project's rubric. This project challenges you on different fronts, all of them relevant to a Fullstack developer end-to-end workflow.\"",
 	},
 ];
+
+// SEO Section
 // See object prototype on SEO.jsx page
 export const seoData = {
 	title: "Tawfeeq Zaghlool",
 	description:
 		"A passionate Full Stack Web Developer",
 	author: "Tawfeeq Zaghlool",
-	// image: "https://avatars3.githubusercontent.com/u/59178380?v=4",
 	url: "https://tawfeeqportfolio.vercel.app/",
 	keywords: [
 		"Tawfeeq",

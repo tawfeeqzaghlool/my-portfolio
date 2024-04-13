@@ -1,5 +1,5 @@
 import React from "react";
-
+import Image from 'next/image';
 import {
 	Card,
 	CardBody,
@@ -9,7 +9,7 @@ import {
 	Col,
 } from "reactstrap";
 
-import { Fade } from "react-reveal";
+import { Fade } from "react-awesome-reveal";
 
 const ExperienceCard = ({ data }) => {
 	return (
@@ -20,22 +20,14 @@ const ExperienceCard = ({ data }) => {
 					className="shadow-lg--hover mb-3 shadow border-0 text-center rounded"
 				>
 					<CardBody className="">
-						<img
+						<Image
 							src={data.companylogo}
-							style={{
-								objectFit: "cover",
-								left: 0,
-								right: 0,
-								top: "7rem",
-								marginLeft: "auto",
-								marginRight: "auto",
-								width: "8rem",
-								height: "8rem",
-								borderRadius: "50%",
-							}}
-							className="shadow mb-3"
 							alt={data.companylogo}
-						/>
+							width={80}
+							height={80}
+							className="shadow mb-3 rounded-full experience-card-image" // Apply the new class
+							loading="lazy"
+							/>
 						<CardTitle tag="h4" className="mb-2">
 							{data.company}
 						</CardTitle>
@@ -45,15 +37,12 @@ const ExperienceCard = ({ data }) => {
 						<CardSubtitle>{data.date}</CardSubtitle>
 						<CardText
 							tag="div"
-							className="description my-3 text-left"
+							className="description my-3 text-justify"
 						>
-							{data.desc}
 							<ul>
-								{data.descBullets
-									? data.descBullets.map((desc) => {
-											return <li key={desc}>{desc}</li>;
-									  })
-									: null}
+								{data.desc.map((point, index) => (
+									<li key={index}>{point}</li>
+								))}
 							</ul>
 						</CardText>
 					</CardBody>

@@ -11,21 +11,21 @@ const Feedbacks = dynamic(() => import("../containers/Feedbacks"));
 const GithubProfileCard = dynamic(() =>
 	import("../components/GithubProfileCard")
 );
-import { openSource } from "../portfolio";
+import { openSource, seoData } from "../portfolio";
 import SEO from "../components/SEO";
 
 export default function Home({ githubProfileData }) {
 	return (
 		<div>
-			<SEO />
+			<SEO seoData={seoData}/>
 			<Navigation />
 			<Greetings />
 			<Skills />
 			<Proficiency />
 			<Education />
 			<Experience />
-			<Feedbacks />
 			<Projects />
+			<Feedbacks />
 			<GithubProfileCard prof={githubProfileData} />
 		</div>
 	);

@@ -9,7 +9,7 @@ const SocialLinks = () => {
 		<div className="btn-wrapper text-lg">
 			{socialLinks.github && (
 				<Button
-					className="btn-icon-only rounded-circle ml-1"
+					className="btn-icon-only rounded-circle ml-1 btn-github"
 					color="github"
 					href={socialLinks.github}
 					rel="noopener"
@@ -23,7 +23,7 @@ const SocialLinks = () => {
 			)}
 			{socialLinks.linkedin && (
 				<Button
-					className="btn-icon-only rounded-circle ml-1"
+					className="btn-icon-only rounded-circle ml-1 btn-linkedin"
 					color="twitter"
 					rel="noopener"
 					aria-label="Linkedin"
