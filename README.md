@@ -107,7 +107,7 @@ Iconify Icons are used in the skill section. All icons are here: [Iconify](https
 
 ## Screenshot
 
-![Alt text](/img/icons/common/screenshot.jpg)
+![Alt text](public/img/icons/common/screenshot.jpg)
 
 ## Contact
 
