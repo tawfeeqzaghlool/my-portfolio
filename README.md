@@ -32,6 +32,7 @@ This portfolio template leverages Next.js, React, and React-DOM, ensuring compat
 |--------|-------------------|
 | Node.js| v18.20.1 or higher|
 | npm    | v10.5.0 or higher |
+| pnpm   | v8.15.6 or higher |
 | Git    | v2.44.0 or higher |
 
 ## How To Use
