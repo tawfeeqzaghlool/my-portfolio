@@ -23,7 +23,7 @@ This portfolio template leverages Next.js, React, and React-DOM, ensuring compat
 ### Prerequisites
 
 - [Git](https://git-scm.com/downloads)
-- [Node.js](https://nodejs.org/en/download) (version compatible with Next.js v14.2.1 - check Next.js documentation for details) with npm or yarn installed
+- [Node.js](https://nodejs.org/en/download) (version compatible with Next.js v14.2.1 - check Next.js documentation for details) with npm or pnpm or yarn installed
 - Basic understanding of Git and Node.js is recommended.
 
 **For Windows** Install Visual C++ Build Environment: [Visual Studio Build Tools](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=BuildTools)

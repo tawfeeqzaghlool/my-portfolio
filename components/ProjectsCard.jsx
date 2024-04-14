@@ -116,6 +116,7 @@ const ProjectsCard = ({ data }) => {
               controls
               src={data.video} // Ensure video path is correct
               type="video/mp4"
+              sizes="(max-width: 768px) 100vw, (max-width: 991px) 60vw, 440px" // Responsive video sizes
             >
               Your browser does not support the video tag.
             </video>

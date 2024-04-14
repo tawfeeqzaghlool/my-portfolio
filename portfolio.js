@@ -5,7 +5,7 @@ export const greetings = {
 	description:
 	"Hey! 👋 I'm Tawfeeq, also known as Tio 😉. I'm a dynamic Full-Stack Web Developer with a recent focus on IoT development. Passionate about innovation and crafting user-centric solutions, I bring 2+ years of Full-Stack experience and 6+ years in project management. Eager to apply my skills in a challenging role that fosters continuous learning. Let's create something amazing together! 🚀",
 	resumeLink:
-		"https://drive.google.com/file/d/18jpTjrNmdNNVNqLpXUCWs8J6CeMV-sc7/view?usp=sharing",
+		"https://drive.google.com/file/d/1UHNNrUVH5VGLLpYhOKApDyyOtkBHGO0p/view?usp=sharing",
 };
 
 export const openSource = {
