@@ -128,7 +128,7 @@ export const skillsSection = {
 				("☁️ Experience with AWS, Azure, and Google Cloud Platform (GCP)"),
 				("☁️ Deploying and managing web applications on virtual machines"),
 				("☁️ Configuring databases in the cloud"),
-				("☁️ Setting up CI/CD pipelines for automated deployments and testing using GitHub Actions and other tools"),
+				("☁️ Automate deployments & testing with GitHub Actions (CI/CD)"),
 			],
 			softwareSkills: [
 				// ? Check README To get icon details
