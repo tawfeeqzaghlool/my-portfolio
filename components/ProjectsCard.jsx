@@ -5,16 +5,12 @@ import Image from 'next/image';
 import { Fade } from "react-awesome-reveal";
 
 const ProjectsCard = ({ data }) => {
-  const [flippedCardId, setFlippedCardId] = useState(null); // Track the id of the currently flipped card
+  const [flippedCardId, setFlippedCardId] = useState(null);
   const [videoModalOpen, setVideoModalOpen] = useState(false);
   const [imageModalOpen, setImageModalOpen] = useState(false);
 
   const handleClick = (cardId) => {
-    if (flippedCardId === cardId) {
-      setFlippedCardId(null); // Flip back if already flipped
-    } else {
-      setFlippedCardId(cardId); // Flip the clicked card
-    }
+    setFlippedCardId(flippedCardId === cardId ? null : cardId);
   };
 
   const toggleVideoModal = () => {
@@ -33,13 +29,14 @@ const ProjectsCard = ({ data }) => {
           <Card
             className={`shadow-lg--hover shadow mt-4 card-container`}
             onClick={() => handleClick(data.id)}
-            title="Click for details" // Add title attribute for hover message
+            title="Click for details"
           >
             <CardBody>
               <div className="d-flex px-3">
                 <div className="pl-4">
                   <h3>{data.name}</h3>
                   <p className="description mt-3">{data.desc}</p>
+                  <p className="mt-3" onClick={() => handleClick(data.id)} style={{ cursor: 'pointer', color: 'blue', textDecoration: 'underline' }}>Learn More</p>
                 </div>
               </div>
             </CardBody>
@@ -60,31 +57,31 @@ const ProjectsCard = ({ data }) => {
                         height="auto"
                         controls
                         onClick={toggleVideoModal}
-                        sizes="(max-width: 768px) 100vw, (max-width: 991px) 60vw, 440px" // Responsive video sizes
+                        sizes="(max-width: 768px) 100vw, (max-width: 991px) 60vw, 440px"
                       >
                         <source src={data.video} type="video/mp4" />
                         Your browser does not support the video tag.
                       </video>
                     </div>
                   )}
-                 {data.photo && (
-                  <div className="mb-3 modal-cursor" onClick={toggleImageModal}>
-                    <Image
-                      src={data.photo}
-                      alt={data.name}
-                      width={440}
-                      height={200}
-                      unoptimized={false}
-                      loading="lazy"
-                      sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" // Responsive image sizes
-                      style={{
-                        width: '100%',
-                        height: 'auto',
-                        objectFit: 'cover',
-                      }}
-                    />
-                  </div>
-                )}
+                  {data.photo && (
+                    <div className="mb-3 modal-cursor" onClick={toggleImageModal}>
+                      <Image
+                        src={data.photo}
+                        alt={data.name}
+                        width={440}
+                        height={200}
+                        unoptimized={false}
+                        loading="lazy"
+                        sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                        style={{
+                          width: '100%',
+                          height: 'auto',
+                          objectFit: 'cover',
+                        }}
+                      />
+                    </div>
+                  )}
                 </div>
                 <div className="text-center">
                   {data.link && (
@@ -106,17 +103,17 @@ const ProjectsCard = ({ data }) => {
       </Fade>
 
       {/* Video Modal */}
-      <Modal isOpen={videoModalOpen} toggle={toggleVideoModal} size="lg" >
+      <Modal isOpen={videoModalOpen} toggle={toggleVideoModal} size="lg">
         <ModalHeader className="text-center" toggle={toggleVideoModal}>{data.name}</ModalHeader>
         <ModalBody className="text-center">
-          {data.video && ( // Check if video data exists
+          {data.video && (
             <video
               width="90%"
               height="auto"
               controls
-              src={data.video} // Ensure video path is correct
+              src={data.video}
               type="video/mp4"
-              sizes="(max-width: 768px) 100vw, (max-width: 991px) 60vw, 440px" // Responsive video sizes
+              sizes="(max-width: 768px) 100vw, (max-width: 991px) 60vw, 440px"
             >
               Your browser does not support the video tag.
             </video>
@@ -128,19 +125,19 @@ const ProjectsCard = ({ data }) => {
       <Modal isOpen={imageModalOpen} toggle={toggleImageModal} size="lg">
         <ModalHeader toggle={toggleImageModal}>{data.name}</ModalHeader>
         <ModalBody className="text-center">
-          {data.photo && ( // Check if photo data exists
+          {data.photo && (
             <Image
-              src={data.photo} // Ensure photo path is correct
+              src={data.photo}
               alt={data.name}
               width="600"
               height="500"
               unoptimized={false}
               loading="lazy"
               sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-               style={{
-                        width: '90%',
-                        height: 'auto',
-                      }}
+              style={{
+                width: '90%',
+                height: 'auto',
+              }}
             />
           )}
         </ModalBody>
