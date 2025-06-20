@@ -15,10 +15,10 @@ const ExperienceCard = ({ data }) => {
 						className="shadow mb-3 rounded-full mx-auto"
 						loading="lazy"
 					/>
-					<h4 className="card-title text-lg font-bold text-blue-900 mb-2 text-center mt-2">
+					<h3 className="card-title text-lg font-bold text-blue-900 mb-2 text-center mt-2">
 						{data.company}
-					</h4>
-					<h5 className="text-md font-semibold text-blue-700 mb-2 text-center">{data.role}</h5>
+					</h3>
+					<h4 className="text-md font-semibold text-blue-700 mb-2 text-center">{data.role}</h4>
 					<p className="text-base text-blue-800 mb-3 text-center">{data.date}</p>
 					<div className="description my-3 text-justify flex-1">
 						<ul className="list-disc list-inside space-y-1">

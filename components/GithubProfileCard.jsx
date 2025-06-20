@@ -19,7 +19,7 @@ const GithubProfileCard = ({ prof }) => {
 			<div className="container px-4 py-8 w-full">
 				<div className="flex flex-row items-center mb-8 gap-4">
 					<div className="text-left">
-						<h1 className="section-title text-white">Hit me Up!</h1>
+						<h2 className="section-title text-white">Hit me Up!</h2>
 					</div>
 				</div>
 				<div className="row w-full">

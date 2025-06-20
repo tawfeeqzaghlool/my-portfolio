@@ -10,8 +10,8 @@ const FeedbackCard = ({ data }) => (
 		transition={{ duration: 0.7, ease: 'easeOut' }}
 	>
 		<div className="card-body p-4">
-			<span className="absolute top-4 left-4 text-blue-500 text-3xl opacity-10 select-none">“</span>
-			<h5 className="text-lg font-bold text-blue-900 mb-2 z-10">
+			<span className="absolute top-4 left-4 text-blue-500 text-3xl opacity-10 select-none">"</span>
+			<h3 className="text-lg font-bold text-blue-900 mb-2 z-10">
 				{data.name}
 				{data.projectName && (
 					<>
@@ -19,7 +19,7 @@ const FeedbackCard = ({ data }) => (
 						on <span className="font-semibold">{data.projectName}</span>
 					</>
 				)}
-			</h5>
+			</h3>
 			<motion.p
 				className="text-base text-blue-800 mt-2 text-justify font-italic z-10"
 				initial={{ opacity: 0, y: 20 }}

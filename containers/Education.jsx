@@ -17,7 +17,7 @@ const Education = () => (
 					/>
 				</div>
 				<div className="text-left">
-					<h1 className="section-title text-white">Education & Certificates</h1>
+					<h2 className="section-title text-white">Education & Certificates</h2>
 				</div>
 			</div>
 			<div className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-items-center">

@@ -100,7 +100,7 @@ const Proficiency = () => {
 				>
 					<div className="row items-center">
 						<div className="col lg:w-1/2">
-							<motion.h1
+							<motion.h2
 								className="section-title text-center"
 								initial="hidden"
 								whileInView="show"
@@ -108,7 +108,7 @@ const Proficiency = () => {
 								variants={itemVariants}
 							>
 								Proficiency
-							</motion.h1>
+							</motion.h2>
 							<motion.div
 								className="space-y-6"
 								variants={containerVariants}

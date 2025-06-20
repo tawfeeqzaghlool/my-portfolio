@@ -16,7 +16,7 @@ const Projects = () => {
 							/>
 						</div>
 						<div className="text-left">
-							<h1 className="section-title">Projects</h1>
+							<h2 className="section-title">Projects</h2>
 							<p className="subtitle mt-2">Dive into my projects.</p>
 						</div>
 					</div>
