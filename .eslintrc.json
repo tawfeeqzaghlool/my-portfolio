@@ -3,5 +3,13 @@
 	"rules": {
 		"react/no-unescaped-entities": "off",
 		"prettier/prettier": ["error", {}, { "usePrettierrc": true }]
-	}
+	},
+	"overrides": [
+		{
+			"files": ["pages/_document.js"],
+			"rules": {
+				"prettier/prettier": "off"
+			}
+		}
+	]
 }
