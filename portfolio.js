@@ -275,7 +275,8 @@ export const feedbacks = [
 // See object prototype on SEO.jsx page
 export const seoData = {
 	title: 'Tawfeeq Zaghlool',
-	description: 'A passionate Full Stack Web Developer',
+	description:
+		'Full-Stack & IoT Developer building modern, high-performance apps using the latest tech.',
 	author: 'Tawfeeq Zaghlool',
 	url: 'https://tawfeeqportfolio.vercel.app/',
 	keywords: [
