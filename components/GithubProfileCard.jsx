@@ -1,49 +1,68 @@
-import React from "react";
+import React from 'react';
+import Image from 'next/image';
+import { motion } from 'framer-motion';
 
-import { Card, Col, Row, Container } from "reactstrap";
-
-import SocialLinks from "../components/SocialLinks";
-import Image from "next/image";
+const fadeIn = {
+	hidden: { opacity: 0, y: 40 },
+	visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: 'easeOut' } }
+};
 
 const GithubProfileCard = ({ prof }) => {
-  return (
-    <Card className="section-lg bg-gradient-info shadow-lg border-0">
-      <Container className="">
-        <div className="p-2">
-          <Row className="">
-            <Col className="order-lg-2" lg="4">
-              <Image
-                src={prof.avatar_url}
-                // Add width and height props based on your desired image size
-                width={200} // Adjust as needed
-                height={200} // Adjust as needed
-                alt="Tawfeeq Zaghlool"
-                className="rounded-circle img-center img-fluid shadow shadow-lg--hover mb-4"
-                unoptimized={true}
-                loading="lazy"
-              />
-            </Col>
-            <Col lg="8" className="order-lg-1">
-              <h2 className="text-white">Hit me Up!</h2>
-              <p className="lead text-white mt-3 text-justify">
-              {`
-                Braintrust or brainstorm I'm all in! 🧠 
-                Got a project or just a friendly chat? 
-                Feel free to reach out! 📩
-              `}
-              </p>
-              <p className="text-white mt-3 text-justify">{prof.bio}</p>
-              <div className="my-3 icon-shape bg-gradient-white shadow rounded text-info">
-                <i className="ni ni-pin-3 text-info mr-2" />
-                {prof.location}
-              </div>
-              <SocialLinks />
-            </Col>
-          </Row>
-        </div>
-      </Container>
-    </Card>
-  );
+	return (
+		<motion.div
+			className="card card-bordered shadow-lg mt-4 w-full bg-gradient-to-br from-blue-500 via-blue-600 to-cyan-500 border-0"
+			initial="hidden"
+			whileInView="visible"
+			viewport={{ once: true, amount: 0.2 }}
+			variants={fadeIn}
+		>
+			<div className="container px-4 py-8 w-full">
+				<div className="flex flex-row items-center mb-8 gap-4">
+					<div className="text-left">
+						<h1 className="section-title text-white">Hit me Up!</h1>
+					</div>
+				</div>
+				<div className="row w-full">
+					<div className="col order-lg-2 lg:w-1/3 flex justify-center items-center">
+						<Image
+							src={prof.avatar_url}
+							width={200}
+							height={200}
+							alt="Tawfeeq Zaghlool"
+							className="rounded-circle img-center img-fluid shadow shadow-lg--hover mb-4 mx-auto block"
+							unoptimized={true}
+							loading="lazy"
+						/>
+					</div>
+					<div className="col lg:w-2/3 order-lg-1 flex flex-col justify-center">
+						<p className="subtitle text-white mt-3 text-justify">
+							Braintrust or brainstorm I'm all in! 🧠 Got a project or just a friendly chat? Feel
+							free to reach out! 📩
+						</p>
+						<p className="text-base text-white mt-3 text-justify">{prof.bio}</p>
+						<div className="btn-wrapper mt-4">
+							<a
+								href={prof.html_url}
+								target="_blank"
+								rel="noopener noreferrer"
+								className="btn btn-on-blue flex items-center gap-2"
+							>
+								<span className="btn-inner--text">GitHub</span>
+							</a>
+							<a
+								href={prof.blog || 'https://www.linkedin.com/in/tawfeeqzaghlool'}
+								target="_blank"
+								rel="noopener noreferrer"
+								className="btn btn-on-blue flex items-center gap-2"
+							>
+								<span className="btn-inner--text">LinkedIn</span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</motion.div>
+	);
 };
 
 export default GithubProfileCard;

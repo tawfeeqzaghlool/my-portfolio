@@ -1,52 +1,32 @@
-import React from "react";
-import EducationCard from "../components/EducationCard";
-import { educationInfo } from "../portfolio";
-import { Container, Row, Col } from "reactstrap";
-import { Fade } from "react-awesome-reveal";
+import React from 'react';
+import EducationCard from '../components/EducationCard';
+import { educationInfo } from '../portfolio';
+import { GraduationCap } from 'lucide-react';
 
-const Education = () => {
-  return educationInfo && (
-    <section className="section pb-0 bg-gradient-info my-5">
-      <Container>
-        <div className="d-flex px-3">
-          <div>
-            <div className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-info">
-              <i className="ni ni-books text-info" alt="Education icon"/>
-            </div>
-          </div>
-          <div className="pl-4">
-            <h4 className="display-3 text-white">Education & Certificates</h4>
-          </div>
-        </div>
-        <Row className="row-grid align-items-center card-container">
-          {educationInfo.map((info, index) => (
-            <Col
-              className="order-lg-1"
-              lg="6"
-              key={info.schoolName}
-            >
-              {/* Wrap EducationCard with Fade */}
-              <Fade key={index} triggerOnce={true} delay={index * 100}>
-                <EducationCard education={info}/>
-              </Fade>
-            </Col>
-          ))}
-        </Row>
-      </Container>
-      <div className="separator separator-bottom separator-skew zindex-100">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          preserveAspectRatio="none"
-          version="1.1"
-          viewBox="0 0 2560 100"
-          x="0"
-          y="0"
-        >
-          <polygon className="fill-white" points="2560 0 2560 100 0 100" />
-        </svg>
-      </div>
-    </section>
-  );
-};
+const Education = () => (
+	<section
+		id="education"
+		className="section pb-0 bg-gradient-to-br from-blue-500 via-blue-600 to-cyan-500"
+	>
+		<div className="container mx-auto px-4 py-8">
+			<div className="flex flex-row items-center mb-8 md:mb-12 gap-4 md:gap-6">
+				<div className="icon icon-lg icon-shape bg-white shadow rounded-full text-blue-600 flex items-center justify-center border-4 border-white ring-4 ring-blue-300">
+					<GraduationCap
+						className="w-8 h-8 md:w-10 md:h-10 text-blue-600"
+						aria-label="Education icon"
+					/>
+				</div>
+				<div className="text-left">
+					<h1 className="section-title text-white">Education & Certificates</h1>
+				</div>
+			</div>
+			<div className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-items-center">
+				{educationInfo.map((info, index) => (
+					<EducationCard education={info} key={index} />
+				))}
+			</div>
+		</div>
+	</section>
+);
 
 export default Education;

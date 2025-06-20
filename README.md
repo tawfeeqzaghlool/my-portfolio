@@ -1,6 +1,6 @@
 # Tawfeeq Zaghlool's Portfolio Source Code
 
-This portfolio template leverages Next.js, React, and React-DOM, ensuring compatibility with recent versions. (Note: Minimum required versions: Next.js v14.2.1, React ^18, React-DOM ^18)
+This portfolio template leverages Next.js, React, and React-DOM, ensuring compatibility with recent versions. (Note: Minimum required versions: Next.js v15.3.4, React ^19, React-DOM ^19)
 
 ## Key Features
 
@@ -28,12 +28,12 @@ This portfolio template leverages Next.js, React, and React-DOM, ensuring compat
 
 **For Windows** Install Visual C++ Build Environment: [Visual Studio Build Tools](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=BuildTools)
 
-| Tool   | Version           |
-|--------|-------------------|
-| Node.js| v18.20.1 or higher|
-| npm    | v10.5.0 or higher |
-| pnpm   | v8.15.6 or higher |
-| Git    | v2.44.0 or higher |
+| Tool    | Version            |
+| ------- | ------------------ |
+| Node.js | v18.20.1 or higher |
+| npm     | v10.5.0 or higher  |
+| pnpm    | v8.15.6 or higher  |
+| Git     | v2.44.0 or higher  |
 
 ## How To Use
 
@@ -81,18 +81,13 @@ Emojis can add personality to your portfolio text. Here's how to add static emoj
 - React
 - React-DOM
 - [axios](https://www.npmjs.com/package/axios) (for making API requests)
-- UI Libraries:
-*-* [reactstrap](https://reactstrap.github.io/)
-*-* [headroomjs](https://wicky.nillia.ms/headroom.js/)
+- UI Library: [daysi ui](https://daisyui.com/)
 - [color-thief](https://github.com/lokesh/color-thief)
 
 ## Animation Libraries
 
-- react-awesome-reveal
 - react-lottie
-- react-card-flip
 - framer-motion
-- react-headroom (for sticky headers)
 
 ## Illustrations
 
@@ -108,7 +103,7 @@ Iconify Icons are used in the skill section. All icons are here: [Iconify](https
 
 ## Screenshot
 
-![Alt text](public/img/icons/common/screenshot.jpg)
+![Alt text](public/img/icons/common/screenshot.png)
 
 ## Contact
 

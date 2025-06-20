@@ -1,122 +1,96 @@
-import React, { useState, useEffect } from "react";
-import Headroom from "headroom.js";
-import Link from "next/link";
-import { motion } from "framer-motion";
-import { greetings, socialLinks } from "../portfolio";
-import {
-    UncontrolledCollapse,
-    NavbarBrand,
-    Navbar,
-    NavItem,
-    Nav,
-    Container,
-    Row,
-    Col,
-} from "reactstrap";
+import React, { useState, useEffect } from 'react';
+import { Menu, X } from 'lucide-react';
+
+const sections = [
+	{ id: 'greetings', label: 'About' },
+	{ id: 'skills', label: 'Skills' },
+	{ id: 'proficiency', label: 'Proficiency' },
+	{ id: 'education', label: 'Education' },
+	{ id: 'experience', label: 'Experience' },
+	{ id: 'projects', label: 'Projects' },
+	{ id: 'feedbacks', label: 'Feedbacks' }
+];
 
 const Navigation = () => {
-    const [collapseClasses, setCollapseClasses] = useState("");
-    const onExiting = () => setCollapseClasses("collapsing-out");
-    const onExited = () => setCollapseClasses("");
+	const [isOpen, setIsOpen] = useState(false);
+	const [activeSection, setActiveSection] = useState('greetings');
+	const [mounted, setMounted] = useState(false);
 
-     useEffect(() => {
-		let headroom = new Headroom(document.getElementById("navbar-main"));
-		// initialise
-		headroom.init();
-	});
-    return (
-        <>
-            <header className="header-global">
-                <Navbar
-                    className="navbar-main navbar-transparent navbar-light headroom"
-                    expand="lg"
-                    id="navbar-main"
-                >
-                    <Container>
-                        <motion.div initial={{ opacity: 0, y: -50 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -50 }}>
-                            <NavbarBrand href="/" className="mr-lg-5">
-                                <h2 className="text-white" id="nav-title">
-                                    {greetings.name}
-                                </h2>
-                            </NavbarBrand>
-                        </motion.div>
-                        <button
-                            className="navbar-toggler"
-                            aria-label="navbar_toggle"
-                            id="navbar_global"
-                        >
-                            <span className="navbar-toggler-icon" />
-                        </button>
-                        <UncontrolledCollapse
-                            toggler="#navbar_global"
-                            navbar
-                            className={collapseClasses}
-                            onExiting={onExiting}
-                            onExited={onExited}
-                        >
-                            <motion.div initial={{ opacity: 0, x: "-100%" }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: "-100%" }}>
-                                <div className="navbar-collapse-header">
-                                    <Row>
-                                        <Col className="collapse-brand" xs="6">
-                                            <h3 className="text-black" id="nav-title">
-                                                {greetings.name}
-                                            </h3>
-                                        </Col>
-                                        <Col className="collapse-close" xs="6">
-                                            <button
-                                                className="navbar-toggler"
-                                                id="navbar_global"
-                                                aria-label="Close menu"
-                                            >
-                                                <span />
-                                                <span />
-                                            </button>
-                                        </Col>
-                                    </Row>
-                                </div>
-                            </motion.div>
-                            <Nav className="align-items-lg-center ml-lg-auto" navbar>
-                                {socialLinks.github && (
-                                <motion.div whileHover={{ scale: 1.1 }}> {/* Wrap social link elements */}
-                                    <NavItem>
-                                    <Link
-                                        rel="noopener"
-                                        aria-label="Github"
-                                        className="nav-link-icon"
-                                        href={socialLinks.github}
-                                        target="_blank"
-                                    >
-                                        <i className="fa fa-github" />
-                                        <span className="nav-link-inner--text d-lg-none ml-2">Github</span>
-                                    </Link>
-                                    </NavItem>
-                                </motion.div>
-                                )}
+	useEffect(() => {
+		setMounted(true);
+		const handleScroll = () => {
+			let current = 'greetings';
+			for (const section of sections) {
+				const el = document.getElementById(section.id);
+				if (el) {
+					const rect = el.getBoundingClientRect();
+					if (rect.top <= 80) {
+						current = section.id;
+					}
+				}
+			}
+			setActiveSection(current);
+		};
+		window.addEventListener('scroll', handleScroll);
+		return () => window.removeEventListener('scroll', handleScroll);
+	}, []);
 
-                                {socialLinks.linkedin && (
-                                <motion.div whileHover={{ scale: 1.1 }}> {/* Wrap social link elements */}
-                                    <NavItem>
-                                    <Link
-                                        rel="noopener"
-                                        aria-label="Linkedin"
-                                        className="nav-link-icon"
-                                        href={socialLinks.linkedin}
-                                        target="_blank"
-                                    >
-                                        <i className="fa fa-linkedin" />
-                                        <span className="nav-link-inner--text d-lg-none ml-2">Linkedin</span>
-                                    </Link>
-                                    </NavItem>
-                                </motion.div>
-                                )}
+	const handleNavClick = (id) => {
+		setIsOpen(false);
+		const el = document.getElementById(id);
+		if (el) {
+			el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+		}
+	};
 
-                            </Nav>
-                        </UncontrolledCollapse>
-                    </Container>
-                </Navbar>
-            </header>
-        </>
-    );
+	if (!mounted) return null;
+
+	return (
+		<nav
+			className="navbar navbar-main glass-navbar fixed w-full top-0 left-0 z-50"
+			id="navbar-main"
+			style={{
+				backdropFilter: 'blur(12px)',
+				background: 'rgba(255,255,255,0.7)',
+				WebkitBackdropFilter: 'blur(12px)',
+				borderBottom: '1px solid rgba(200,200,200,0.2)'
+			}}
+		>
+			<div className="container flex justify-between items-center py-4">
+				<a
+					href="#greetings"
+					className="navbar-brand font-bold text-xl text-info"
+					onClick={() => handleNavClick('greetings')}
+				>
+					Tawfeeq Zaghlool
+				</a>
+				<button
+					className="navbar-toggler ml-auto lg:hidden"
+					aria-label="Toggle navigation"
+					onClick={() => setIsOpen(!isOpen)}
+				>
+					{isOpen ? <X className="w-6 h-6 text-info" /> : <Menu className="w-6 h-6 text-info" />}
+				</button>
+				<div
+					className={`navbar-collapse flex flex-col space-y-2 lg:space-y-0 lg:flex-row lg:items-center lg:static lg:bg-transparent lg:shadow-none lg:border-0 transition-all duration-300 px-4 py-2 ${
+						isOpen ? 'flex' : 'hidden lg:flex'
+					}`}
+				>
+					{sections.map((section) => (
+						<button
+							key={section.id}
+							className={`nav-link text-left w-full lg:w-auto px-4 py-2 text-lg font-medium transition-colors duration-200 ${
+								activeSection === section.id ? 'text-info font-bold' : 'text-gray-700'
+							}`}
+							onClick={() => handleNavClick(section.id)}
+						>
+							{section.label}
+						</button>
+					))}
+				</div>
+			</div>
+		</nav>
+	);
 };
 
 export default Navigation;

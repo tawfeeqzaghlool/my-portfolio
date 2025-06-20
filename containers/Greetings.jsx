@@ -1,111 +1,98 @@
-import React, { useEffect, useState } from "react";
-import { greetings } from "../portfolio";
-import { Button, Container, Row, Col } from "reactstrap";
-import { motion } from "framer-motion";
-import SocialLinks from "../components/SocialLinks";
-import GreetingLottie from "../components/DisplayLottie";
-import { useTypingEffect } from "../hook/useTypingEffect";
+import React, { useEffect, useState } from 'react';
+import { greetings } from '../portfolio';
+import { motion } from 'framer-motion';
+import SocialLinks from '../components/SocialLinks';
+import GreetingLottie from '../components/DisplayLottie';
+import AnimatedText from '../components/AnimatedText';
+
+const fadeIn = {
+	hidden: { opacity: 0, y: 40 },
+	visible: { opacity: 1, y: 0, transition: { duration: 1, ease: 'easeOut' } }
+};
 
 const Greetings = () => {
-  const [displaySocialLinks, setDisplaySocialLinks] = useState(false);
+	const [displaySocialLinks, setDisplaySocialLinks] = useState(false);
 
-  // Use the useTypingEffect hook to simulate typing effect
-  const typedText = useTypingEffect(greetings.description, 30);
+	useEffect(() => {
+		document.documentElement.scrollTop = 0;
+		document.scrollingElement.scrollTop = 0;
+	}, []);
 
-  useEffect(() => {
-    document.documentElement.scrollTop = 0;
-    document.scrollingElement.scrollTop = 0;
-  }, []);
+	useEffect(() => {
+		const timer = setTimeout(() => setDisplaySocialLinks(true), 1200);
+		return () => clearTimeout(timer);
+	}, []);
 
-  useEffect(() => {
-    setTimeout(() => {
-      setDisplaySocialLinks(true);
-    }, greetings.description.length * 30 + 3000);
-  }, []);
-  return (
-    <main>
-      <div className="position-relative">
-        <section className="section section-lg section-shaped pb-250">
-          <div className="shape shape-style-1 bg-gradient-info">
-            <span />
-            <span />
-            <span />
-            <span />
-            <span />
-            <span />
-            <span />
-            <span />
-            <span />
-          </div>
-          <Container className="py-lg-md d-flex">
-            <div className="col px-0">
-              <Row>
-                <Col lg="6">
-                  <motion.h1
-                    className="display-3 text-white"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 1 }}
-                  >
-                    {greetings.title + " "}
-                  </motion.h1>
-                  <motion.p className="lead text-white text-justify">
-                    {typedText}
-                  </motion.p>
-                  {displaySocialLinks && (
-                    <motion.div
-                      className="fade-in"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      transition={{ duration: 2 }}
-                    >
-                      <SocialLinks />
-                      <div className="btn-wrapper my-4">
-                        <Button
-                          className="btn-white btn-icon mb-3 mb-sm-0 ml-1"
-                          color="default"
-                          href={greetings.resumeLink}
-                        >
-                          <span className="btn-inner--icon mr-1">
-                            <i className="fa fa-file" />
-                          </span>
-                          <span className="btn-inner--text">
-                            View My Resume
-                          </span>
-                        </Button>
-                      </div>
-                    </motion.div>
-                  )}
-                </Col>
-                <Col lg="6">
-                  <motion.div
-                    style={{ width: "100%" }}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 1 }}
-                  >
-                    <GreetingLottie animationPath="/lottie/greeting.json" />
-                  </motion.div>
-                </Col>
-              </Row>
-            </div>
-          </Container>
-          <div className="separator separator-bottom separator-skew">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              preserveAspectRatio="none"
-              version="1.1"
-              viewBox="0 0 2560 100"
-              x="0"
-              y="0"
-            >
-              <polygon className="fill-white" points="2560 0 2560 100 0 100" />
-            </svg>
-          </div>
-        </section>
-      </div>
-    </main>
-  );
+	return (
+		<main>
+			<div className="position-relative">
+				<section id="greetings" className="section section-shaped bg-gradient-info py-8 md:py-12">
+					<div className="shape shape-style-1 bg-gradient-info">
+						<span />
+						<span />
+						<span />
+						<span />
+						<span />
+						<span />
+						<span />
+						<span />
+						<span />
+					</div>
+					<div className="container py-lg-md">
+						<div className="flex flex-col lg:flex-row items-center gap-8">
+							<div className="w-full lg:w-1/2">
+								<motion.div
+									initial="hidden"
+									animate="visible"
+									variants={fadeIn}
+									transition={{ delay: 0.2, duration: 1 }}
+								>
+									<AnimatedText
+										text={greetings.description}
+										className="text-white text-2xl md:text-3xl text-justify font-inter mt-4"
+									/>
+								</motion.div>
+								{displaySocialLinks && (
+									<motion.div
+										className="fade-in"
+										initial={{ opacity: 0 }}
+										animate={{ opacity: 1 }}
+										transition={{ duration: 2 }}
+									>
+										<SocialLinks />
+										<div className="btn-wrapper my-4">
+											<a
+												className="btn btn-on-blue flex items-center gap-2 mb-3 ml-1"
+												href={greetings.resumeLink}
+												target="_blank"
+												rel="noopener noreferrer"
+											>
+												<span className="btn-inner--icon">
+													<i className="fa fa-file" />
+												</span>
+												<span className="btn-inner--text">View My Resume</span>
+											</a>
+										</div>
+									</motion.div>
+								)}
+							</div>
+							<div className="w-full lg:w-1/2">
+								<motion.div
+									className="w-full max-h-[500px] overflow-hidden"
+									initial="hidden"
+									animate="visible"
+									variants={fadeIn}
+									transition={{ delay: 0.3, duration: 1 }}
+								>
+									<GreetingLottie animationPath="/lottie/greeting.json" />
+								</motion.div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+		</main>
+	);
 };
 
 export default Greetings;

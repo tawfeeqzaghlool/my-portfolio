@@ -1,29 +1,16 @@
-import React from "react";
-import { Card, CardBody, Badge } from "reactstrap";
+import React from 'react';
 
-import { Fade } from "react-awesome-reveal";
-
-const EducationCard = ({ education }) => {
-	return (
-		<Fade left duration={2000} >
-			<Card className="card-lift--hover shadow mt-4">
-				<CardBody>
-					<div className="d-flex px-3">
-						<div className="pl-4">
-							<h5 className="text-info">
-								{education.schoolName}
-							</h5>
-								<h6>{education.subHeader}</h6>
-							<Badge color="info" className="mr-1">
-								{education.duration}
-							</Badge>
-							<p className="description mt-3">{education.desc}</p>
-						</div>
-					</div>
-				</CardBody>
-			</Card>
-		</Fade>
-	);
-};
+const EducationCard = ({ education }) => (
+	<div className="card card-bordered shadow-lg mt-4 w-full max-w-md transition-all duration-200 hover:shadow-xl bg-gradient-to-br from-white via-blue-50 to-blue-100 backdrop-blur-md border border-blue-200">
+		<div className="card-body p-4 gap-2">
+			<h5 className="card-title text-lg font-bold text-blue-900 mb-1">{education.schoolName}</h5>
+			<h6 className="font-semibold text-blue-700 mb-2 text-md">{education.subHeader}</h6>
+			<div className="badge badge-info mb-2 px-4 py-2 text-base font-medium self-start">
+				{education.duration}
+			</div>
+			<p className="text-blue-800 mt-2 leading-relaxed text-base">{education.desc}</p>
+		</div>
+	</div>
+);
 
 export default EducationCard;
