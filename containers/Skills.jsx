@@ -91,12 +91,16 @@ const Skills = () => {
 									<div className="space-y-2 text-left">
 										{section.skills.map((skill, i) => {
 											return (
-												<h3
+												<div
 													key={i}
-													className="text-xl font-semibold text-gray-800 flex items-center gap-2"
+													className="text-base md:text-lg font-medium font-inter text-slate-700 flex items-center gap-2 pl-2 py-1 rounded-lg bg-white/60 shadow-sm"
+													style={{
+														fontWeight: 500,
+														fontFamily: 'Nunito Sans, Inter, Segoe UI, Roboto, Arial, sans-serif'
+													}}
 												>
 													<span>{skill}</span>
-												</h3>
+												</div>
 											);
 										})}
 									</div>

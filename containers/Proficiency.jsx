@@ -91,7 +91,7 @@ const itemVariants = {
 const Proficiency = () => {
 	return (
 		SkillBars && (
-			<div id="proficiency" className="container section">
+			<section id="proficiency" className="container section">
 				<motion.div
 					initial="hidden"
 					whileInView="show"
@@ -132,7 +132,7 @@ const Proficiency = () => {
 						</div>
 					</div>
 				</motion.div>
-			</div>
+			</section>
 		)
 	);
 };

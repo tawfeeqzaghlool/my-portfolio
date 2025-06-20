@@ -17,6 +17,7 @@
 		"fix": "pnpm run lint --fix && pnpm run format"
 	},
 	"dependencies": {
+		"@fontsource/nunito-sans": "^5.2.6",
 		"@iconify/react": "^6.0.0",
 		"@next/eslint-plugin-next": "15.3.4",
 		"@tailwindcss/postcss": "^4.1.7",

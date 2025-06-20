@@ -5,26 +5,31 @@
 /* Custom CSS Variables for Design Tokens */
 :root {
   /* Colors */
-  --color-primary: #11cdef;
-  --color-primary-dark: #0ea5e9;
+  --color-primary: #7f9cf5; /* soft indigo */
+  --color-primary-dark: #6366f1; /* indigo-500 */
   --color-secondary: #f7fafc;
   --color-success: #2dce89;
-  --color-info: #11cdef;
+  --color-info: #38bdf8; /* sky-400 */
   --color-warning: #fb6340;
   --color-danger: #f5365c;
   --color-light: #f8f9fa;
   --color-dark: #212529;
   --color-white: #ffffff;
   --color-black: #000000;
+  --color-smooth1: #e0e7ff; /* indigo-100 */
+  --color-smooth2: #f0fdfa; /* teal-50 */
+  --color-smooth3: #f5f3ff; /* purple-50 */
+  --color-smooth4: #e0f2fe; /* sky-100 */
   
   /* Gradients */
-  --gradient-primary: linear-gradient(87deg, #11cdef 0, #1171ef 100%);
-  --gradient-secondary: linear-gradient(87deg, #f7fafc 0, #f8f9fa 100%);
+  --gradient-primary: linear-gradient(120deg, #a5b4fc 0%, #38bdf8 100%);
+  --gradient-secondary: linear-gradient(120deg, #f0fdfa 0%, #f5f3ff 100%);
   --gradient-success: linear-gradient(87deg, #2dce89 0, #2dcecc 100%);
-  --gradient-info: linear-gradient(87deg, #11cdef 0, #1171ef 100%);
+  --gradient-info: linear-gradient(120deg, #a5b4fc 0%, #38bdf8 100%);
   --gradient-warning: linear-gradient(87deg, #fb6340 0, #fbb140 100%);
   --gradient-danger: linear-gradient(87deg, #f5365c 0, #f56036 100%);
   --gradient-dark: linear-gradient(87deg, #172b4d 0, #2a4365 100%);
+  --gradient-smooth: linear-gradient(120deg, #e0e7ff 0%, #f0fdfa 50%, #e0f2fe 100%);
   
   /* Spacing */
   --spacing-xs: 0.25rem;
@@ -70,6 +75,7 @@ html, body, #__next, main {
   padding: 0;
   overflow-x: hidden;
   scroll-behavior: smooth;
+  font-family: 'Nunito Sans', 'Inter', 'Segoe UI', 'Roboto', 'Arial', sans-serif;
 }
 
 main {
@@ -77,13 +83,14 @@ main {
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  font-family: 'Nunito Sans', 'Inter', 'Segoe UI', 'Roboto', 'Arial', sans-serif;
   line-height: 1.6;
   color: var(--color-dark);
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 600;
+  font-family: 'Nunito Sans', 'Inter', 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+  font-weight: 700;
   line-height: 1.2;
 }
 
@@ -103,7 +110,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .shape-style-1 {
-  background: linear-gradient(87deg, #11cdef 0, #1171ef 100%);
+  background: var(--gradient-primary) !important;
 }
 
 .shape-style-1 span {
@@ -409,7 +416,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Text Styles */
 .text-info {
-  color: #3b82f6;
+  color: #6366f1 !important;
 }
 
 .text-white {
@@ -438,11 +445,11 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Background Styles */
 .bg-gradient-info {
-  background: linear-gradient(to right, #3b82f6, #2563eb);
+  background: var(--gradient-primary) !important;
 }
 
 .bg-gradient-white {
-  background: linear-gradient(to right, white, #f9fafb);
+  background: var(--gradient-secondary) !important;
 }
 
 /* Layout Utilities */
@@ -1063,14 +1070,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .font-inter {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  font-family: 'Nunito Sans', 'Inter', 'Segoe UI', 'Roboto', 'Arial', sans-serif;
 }
 
 .section-title {
   font-weight: 800;
   font-size: 1.5rem; /* text-2xl for mobile */
   color: #1e3a8a; /* Tailwind blue-900 */
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  font-family: 'Nunito Sans', 'Inter', 'Segoe UI', 'Roboto', 'Arial', sans-serif;
 }
 @media (min-width: 768px) {
   .section-title {
@@ -1088,7 +1095,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 1.5rem; /* text-2xl */
   font-weight: 600;
   color: #1e40af; /* Tailwind blue-800 */
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  font-family: 'Nunito Sans', 'Inter', 'Segoe UI', 'Roboto', 'Arial', sans-serif;
 }
 @media (min-width: 768px) {
   .subtitle {
@@ -1119,4 +1126,45 @@ h1, h2, h3, h4, h5, h6 {
   border-color: #2563eb;
   box-shadow: 0 4px 16px 0 rgba(30,58,138,0.18);
   transform: translateY(-1px);
+}
+
+/* Smooth, modern, glassy background for key sections */
+.bg-smooth {
+  background: var(--gradient-smooth);
+  backdrop-filter: blur(12px) saturate(1.2);
+  -webkit-backdrop-filter: blur(12px) saturate(1.2);
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.10);
+}
+
+/* Card glassmorphism effect */
+.card,
+.card-bordered,
+.card-body {
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(8px) saturate(1.1);
+  -webkit-backdrop-filter: blur(8px) saturate(1.1);
+  border-radius: 1rem;
+  box-shadow: 0 4px 24px 0 rgba(31, 38, 135, 0.08);
+  border: 1px solid rgba(120, 144, 255, 0.10);
+}
+
+/* Update gradients for info/primary backgrounds */
+.bg-gradient-info,
+.shape-style-1,
+.section-shaped.bg-gradient-info {
+  background: var(--gradient-primary) !important;
+}
+
+.bg-gradient-white {
+  background: var(--gradient-secondary) !important;
+}
+
+/* Update text-info for better contrast */
+.text-info {
+  color: #6366f1 !important;
+}
+
+section {
+  scroll-margin-top: 5rem;
 }
