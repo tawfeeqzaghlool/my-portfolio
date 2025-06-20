@@ -226,12 +226,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-primary {
-  background-color: #1d4ed8;
+  background-color: #0a2540;
   color: #fff;
 }
 
 .btn-primary:hover {
-  background-color: #1e40af;
+  background-color: #163e6c;
 }
 
 .btn-secondary {
