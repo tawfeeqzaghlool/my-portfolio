@@ -46,16 +46,7 @@ const Navigation = () => {
 	if (!mounted) return null;
 
 	return (
-		<nav
-			className="navbar navbar-main glass-navbar fixed w-full top-0 left-0 z-50"
-			id="navbar-main"
-			style={{
-				backdropFilter: 'blur(12px)',
-				background: 'rgba(255,255,255,0.7)',
-				WebkitBackdropFilter: 'blur(12px)',
-				borderBottom: '1px solid rgba(200,200,200,0.2)'
-			}}
-		>
+		<nav className="navbar navbar-main glass-navbar fixed w-full top-0 left-0 z-50 backdrop-blur bg-white/85 border-b border-gray-200">
 			<div className="container flex justify-between items-center py-4">
 				<a
 					href="#greetings"

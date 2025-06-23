@@ -12,8 +12,8 @@ const ExperienceCard = ({ data }) => {
 							alt={data.company}
 							width={80}
 							height={80}
-							className="object-contain w-full h-full"
 							loading="lazy"
+							className="object-contain"
 						/>
 					</div>
 					<h3 className="card-title text-lg font-bold text-blue-900 mb-2 text-center mt-2">
