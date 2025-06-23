@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { greetings } from '../portfolio';
 import { motion } from 'framer-motion';
 import SocialLinks from '../components/SocialLinks';
@@ -11,16 +11,9 @@ const fadeIn = {
 };
 
 const Greetings = () => {
-	const [displaySocialLinks, setDisplaySocialLinks] = useState(false);
-
 	useEffect(() => {
 		document.documentElement.scrollTop = 0;
 		document.scrollingElement.scrollTop = 0;
-	}, []);
-
-	useEffect(() => {
-		const timer = setTimeout(() => setDisplaySocialLinks(true), 1200);
-		return () => clearTimeout(timer);
 	}, []);
 
 	return (
@@ -42,13 +35,14 @@ const Greetings = () => {
 											className="text-slate-800 text-lg sm:text-xl md:text-2xl text-center lg:text-left font-inter mt-2 mb-2 max-w-xl"
 										/>
 									</motion.div>
-									{displaySocialLinks && (
-										<motion.div
-											className="fade-in"
-											initial={{ opacity: 0 }}
-											animate={{ opacity: 1 }}
-											transition={{ duration: 2 }}
-										>
+									<div className="h-8" />
+									<motion.div
+										className="fade-in"
+										initial={{ opacity: 0 }}
+										animate={{ opacity: 1 }}
+										transition={{ duration: 2 }}
+									>
+										<div className="flex flex-col w-full">
 											<SocialLinks />
 											<div className="btn-wrapper my-4">
 												<a
@@ -63,8 +57,8 @@ const Greetings = () => {
 													<span className="btn-inner--text">View My Resume</span>
 												</a>
 											</div>
-										</motion.div>
-									)}
+										</div>
+									</motion.div>
 								</div>
 								<div className="w-full lg:w-1/2 flex justify-center">
 									<motion.div

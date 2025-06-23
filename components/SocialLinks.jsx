@@ -3,7 +3,7 @@ import { socialLinks } from '../portfolio';
 
 const SocialLinks = () => {
 	return (
-		<div className="btn-wrapper text-lg">
+		<div className="btn-wrapper flex flex-col md:flex-row w-full gap-3 md:gap-4 items-center justify-start md:justify-start mt-6">
 			{socialLinks.github && (
 				<a
 					className="btn btn-on-blue flex items-center gap-2 ml-1"

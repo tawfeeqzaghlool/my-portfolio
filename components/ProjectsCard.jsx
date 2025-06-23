@@ -48,7 +48,16 @@ const ProjectsCard = ({ data }) => {
 										playsInline
 										preload="metadata"
 										onClick={(e) => e.preventDefault()}
-									/>
+									>
+										{/* TODO: Replace with real captions file for each video */}
+										<track
+											kind="captions"
+											src="/captions/placeholder.vtt"
+											srcLang="en"
+											label="English captions"
+											default
+										/>
+									</video>
 									<div className="absolute inset-0 bg-black bg-opacity-25 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity cursor-pointer rounded-xl">
 										<span className="text-white text-lg font-semibold select-none">View Video</span>
 									</div>
@@ -117,7 +126,16 @@ const ProjectsCard = ({ data }) => {
 						</button>
 
 						{modalType === 'video' && data.video && (
-							<video src={data.video} controls autoPlay className="w-full h-auto max-h-[80vh]" />
+							<video src={data.video} controls autoPlay className="w-full h-auto max-h-[80vh]">
+								{/* TODO: Replace with real captions file for each video */}
+								<track
+									kind="captions"
+									src="/captions/placeholder.vtt"
+									srcLang="en"
+									label="English captions"
+									default
+								/>
+							</video>
 						)}
 						{modalType === 'photo' && data.photo && (
 							<Image

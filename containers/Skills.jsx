@@ -1,5 +1,5 @@
 import { Icon } from '@iconify/react';
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { skillsSection } from '../portfolio';
@@ -14,6 +14,25 @@ const fadeInRight = {
 };
 
 const Skills = () => {
+	// State to track which tooltip is open (for mobile click)
+	const [activeTooltip, setActiveTooltip] = useState(null);
+
+	// Helper to handle click/tap for mobile
+	const handleIconClick = (index) => {
+		setActiveTooltip(activeTooltip === index ? null : index);
+	};
+
+	// Helper to close tooltip on outside click (mobile)
+	React.useEffect(() => {
+		const handleClickOutside = (e) => {
+			if (!e.target.closest('.skill-icon-tooltip-container')) {
+				setActiveTooltip(null);
+			}
+		};
+		document.addEventListener('mousedown', handleClickOutside);
+		return () => document.removeEventListener('mousedown', handleClickOutside);
+	}, [activeTooltip]);
+
 	return (
 		skillsSection && (
 			<div id="skills" className="container text-center section section-lg">
@@ -37,7 +56,7 @@ const Skills = () => {
 				</motion.div>
 				{skillsSection.data.map((section, index) => {
 					return (
-						<div className="row my-5" key={index}>
+						<div className="row my-5 flex flex-col-reverse lg:flex-row" key={index}>
 							<div className="col lg:w-1/2 order-2 order-lg-1">
 								<motion.div
 									initial="hidden"
@@ -68,6 +87,7 @@ const Skills = () => {
 									</div>
 									<div className="flex flex-wrap gap-2 mb-4 justify-center">
 										{section.softwareSkills.map((skill, i) => {
+											const tooltipId = `${section.title.replace(/\s/g, '')}-${skill.skillName.replace(/\s/g, '')}`;
 											return (
 												<Fragment key={i}>
 													<motion.div
@@ -77,11 +97,35 @@ const Skills = () => {
 														variants={fadeInLeft}
 													>
 														<div
-															className="icon icon-lg icon-shape shadow-sm rounded-full skill-icon-animated flex items-center justify-center bg-white"
-															id={skill.skillName.replace(/\s/g, '')}
-															title={skill.skillName}
+															className="skill-icon-tooltip-container relative flex flex-col items-center"
+															// For accessibility: tabIndex and aria-label
+															tabIndex={0}
+															aria-label={skill.skillName}
+															onClick={() => handleIconClick(`${index}-${i}`)}
 														>
-															<Icon icon={skill.fontAwesomeClassname} data-inline="false" />
+															<div
+																className="icon icon-lg icon-shape shadow-sm rounded-full skill-icon-animated flex items-center justify-center bg-white cursor-pointer hover:bg-blue-100 transition-colors duration-200"
+																id={skill.skillName.replace(/\s/g, '')}
+																title={skill.skillName}
+															>
+																<Icon
+																	icon={skill.fontAwesomeClassname}
+																	data-inline="false"
+																	className="text-2xl text-blue-700"
+																/>
+															</div>
+															{/* Tooltip */}
+															<span
+																className={`z-20 pointer-events-none select-none absolute -top-10 left-1/2 -translate-x-1/2 px-3 py-1 rounded-md shadow-lg text-sm font-semibold bg-blue-800 text-white whitespace-nowrap transition-opacity duration-200 ${activeTooltip === `${index}-${i}` ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}
+																style={{
+																	minWidth: 'max-content',
+																	pointerEvents: 'none'
+																}}
+																role="tooltip"
+																id={tooltipId}
+															>
+																{skill.skillName}
+															</span>
 														</div>
 													</motion.div>
 												</Fragment>

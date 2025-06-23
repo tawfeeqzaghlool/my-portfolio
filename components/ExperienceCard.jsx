@@ -6,15 +6,16 @@ const ExperienceCard = ({ data }) => {
 		<div className="card card-bordered shadow mt-4 w-full max-w-md flex flex-col">
 			<div className="card-body">
 				<div className="flex flex-col items-center">
-					<Image
-						src={data.companylogo}
-						alt={data.company}
-						width={80}
-						height={80}
-						style={{ width: 80, height: 80 }}
-						className="shadow mb-3 rounded-full mx-auto"
-						loading="lazy"
-					/>
+					<div className="w-20 h-20 flex items-center justify-center mb-3 rounded-full bg-white shadow overflow-hidden">
+						<Image
+							src={data.companylogo}
+							alt={data.company}
+							width={80}
+							height={80}
+							className="object-contain w-full h-full"
+							loading="lazy"
+						/>
+					</div>
 					<h3 className="card-title text-lg font-bold text-blue-900 mb-2 text-center mt-2">
 						{data.company}
 					</h3>
