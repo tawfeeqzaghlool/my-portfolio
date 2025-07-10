@@ -33,7 +33,6 @@ const AnimatedProgressBar = ({ stack, percentage, delay }) => {
 					barRef.current.style.width = percentage + '%';
 				}
 				// Animate the number
-				let start = 0;
 				const duration = 1500;
 				const startTime = performance.now();
 				function animateNumber(now) {
@@ -68,7 +67,7 @@ const AnimatedProgressBar = ({ stack, percentage, delay }) => {
 					ref={barRef}
 					className="bg-gradient-to-r from-blue-400 to-blue-600 h-4 rounded-full transition-all duration-700"
 					style={{ width: '0%' }}
-				></div>
+				/>
 			</div>
 		</div>
 	);

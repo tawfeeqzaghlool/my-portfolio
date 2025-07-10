@@ -43,7 +43,9 @@ const Navigation = () => {
 		}
 	};
 
-	if (!mounted) return null;
+	if (!mounted) {
+		return null;
+	}
 
 	return (
 		<nav className="navbar navbar-main glass-navbar fixed w-full top-0 left-0 z-50 backdrop-blur bg-white/85 border-b border-gray-200">
@@ -71,7 +73,7 @@ const Navigation = () => {
 						<button
 							key={section.id}
 							className={`nav-link text-left w-full lg:w-auto px-4 py-2 text-lg font-medium transition-colors duration-200 ${
-								activeSection === section.id ? 'text-info font-bold' : 'text-gray-700'
+								activeSection === section.id ? 'nav-link-active' : 'text-gray-700'
 							}`}
 							onClick={() => handleNavClick(section.id)}
 						>

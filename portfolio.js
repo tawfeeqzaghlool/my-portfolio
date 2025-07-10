@@ -228,11 +228,11 @@ export const projects = [
 	},
 	// Full Stack Projects
 	{
-		name: 'Extender for Marketing & Software Development',
-		desc: 'Extender empowers businesses in Jordan and Globally with innovative digital marketing and software solutions. Local expertise, creative strategy, and measurable results for your success. Based in Amman, serving clients locally and beyond.',
-		photo: '/web/wp1.png',
-		link: 'https://extender.site/',
-		linkLabel: 'Visit Extender Website'
+		name: 'Al-Tarawneh Law Firm',
+		desc: 'Al-Tarawneh Law Firm is a leading law firm in Jordan specializing in corporate law, litigation, contracts, and international legal services. Providing expert legal consultation across the Middle East, the firm is recognized for its excellence and client-focused approach.',
+		photo: '/web/wp1.png', // Use a suitable placeholder or update with the actual image if available
+		link: 'https://altarawnehlaw.com',
+		linkLabel: 'Visit Al-Tarawneh Law Firm Website'
 	},
 	{
 		name: 'Natural Looks',

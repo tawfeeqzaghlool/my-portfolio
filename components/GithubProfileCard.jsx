@@ -37,8 +37,8 @@ const GithubProfileCard = ({ prof }) => {
 						</div>
 						<div className="col lg:w-2/3 order-lg-1 flex flex-col justify-center">
 							<p className="subtitle text-slate-900 mt-3 text-justify">
-								Braintrust or brainstorm I'm all in! 🧠 Got a project or just a friendly chat? Feel
-								free to reach out! 📩
+								Braintrust or brainstorm I&apos;m all in! 🧠 Got a project or just a friendly chat?
+								Feel free to reach out! 📩
 							</p>
 							<p className="text-base text-slate-900 mt-3 text-justify">{prof.bio}</p>
 							<div className="btn-wrapper mt-4">

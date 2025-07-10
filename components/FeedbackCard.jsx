@@ -10,7 +10,9 @@ const FeedbackCard = ({ data }) => (
 		transition={{ duration: 0.7, ease: 'easeOut' }}
 	>
 		<div className="card-body p-4">
-			<span className="absolute top-4 left-4 text-blue-500 text-3xl opacity-10 select-none">"</span>
+			<span className="absolute top-4 left-4 text-blue-500 text-3xl opacity-10 select-none">
+				&quot;
+			</span>
 			<h2 className="sr-only">Feedback</h2>
 			<h3 className="text-lg font-bold text-blue-900 mb-2 z-10">
 				{data.name}
