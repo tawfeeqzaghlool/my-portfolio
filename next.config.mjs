@@ -2,6 +2,8 @@
 import withBundleAnalyzer from '@next/bundle-analyzer';
 
 const nextConfig = {
+	compress: true,
+	poweredByHeader: false,
 	reactStrictMode: true,
 	eslint: {
 		ignoreDuringBuilds: true

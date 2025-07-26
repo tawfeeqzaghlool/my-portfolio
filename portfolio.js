@@ -278,7 +278,7 @@ export const seoData = {
 	description:
 		'Full-Stack & IoT Developer building modern, high-performance apps using the latest tech.',
 	author: 'Tawfeeq Zaghlool',
-	url: 'https://tawfeeqportfolio.vercel.app/',
+	url: 'https://tawfeeqzaghlool.site/',
 	keywords: [
 		'Tawfeeq',
 		'DevTio',
