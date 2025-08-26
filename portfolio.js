@@ -4,7 +4,7 @@ export const greetings = {
 	description:
 		"Hey! 👋 I'm Tawfeeq — or Tio 😉 A Full-Stack Web & IoT Developer and proud Founder of DevTio — a creative hub for cutting-edge digital products and connected experiences. With 6+ years in development and 9+ in project management, I build scalable apps across web, mobile, IoT, and blockchain. I'm driven by innovation, clean engineering, and the joy of solving real-world problems with tech. Let's bring bold ideas to life! 🚀",
 	resumeLink:
-		'https://drive.google.com/file/d/1MGEMZ6ZpzrB9K0bQZVu_5BrDMOdQO5Yf/view?usp=drive_link'
+		'https://drive.google.com/file/d/1sp-jnnIgcy0gAJTPoDpSjNcLuFguOzdt/view?usp=sharing'
 };
 
 export const openSource = {
