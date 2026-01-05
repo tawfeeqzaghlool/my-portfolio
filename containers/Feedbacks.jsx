@@ -1,8 +1,7 @@
-import React from 'react';
-import FeedbackCard from '../components/FeedbackCard';
-import { motion } from 'framer-motion';
 import { feedbacks } from '../portfolio';
+import { motion } from 'framer-motion';
 import { Star } from 'lucide-react';
+import FeedbackCard from '../components/FeedbackCard';
 
 const containerVariants = {
 	hidden: {},

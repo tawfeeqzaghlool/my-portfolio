@@ -1,7 +1,6 @@
-import React from 'react';
 import { projects } from '../portfolio';
-import ProjectsCard from '../components/ProjectsCard';
 import { Laptop } from 'lucide-react';
+import ProjectsCard from '../components/ProjectsCard';
 
 const Projects = () => {
 	return (

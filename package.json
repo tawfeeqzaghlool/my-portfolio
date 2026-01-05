@@ -1,6 +1,6 @@
 {
 	"name": "developer-portfolio",
-	"version": "1.0.0",
+	"version": "2.0.0",
 	"description": "This eye-catching portfolio template is built with the latest versions of React and Next.js, providing a robust foundation to showcase your skills and projects as a software developer.",
 	"main": "index.js",
 	"repository": "https://github.com/tawfeeqzaghlool/my-portfolio.git",
@@ -22,12 +22,12 @@
 	"dependencies": {
 		"@fontsource/nunito-sans": "^5.2.6",
 		"@iconify/react": "^6.0.0",
-		"@next/eslint-plugin-next": "15.5.0",
+		"@next/eslint-plugin-next": "^16.0.0",
 		"@tailwindcss/postcss": "^4.1.7",
-		"daisyui": "5.0.47",
+		"daisyui": "^5.5.14",
 		"framer-motion": "^12.18.1",
-		"lucide-react": "^0.542.0",
-		"next": "15.5.0",
+		"lucide-react": "^0.562.0",
+		"next": "^16.0.0",
 		"next-sitemap": "^4.2.3",
 		"react": "^19",
 		"react-dom": "^19",
@@ -37,17 +37,17 @@
 	},
 	"devDependencies": {
 		"@eslint/eslintrc": "^3",
-		"@next/bundle-analyzer": "^15.5.0",
+		"@next/bundle-analyzer": "^16.0.0",
 		"@tailwindcss/cli": "^4.1.11",
 		"eslint": "^9",
-		"eslint-config-next": "15.5.0",
+		"eslint-config-next": "^16.0.0",
 		"eslint-config-prettier": "^10.1.5",
 		"eslint-plugin-react": "^7.37.5",
-		"eslint-plugin-react-hooks": "^5.2.0",
+		"eslint-plugin-react-hooks": "^7.0.1",
 		"eslint-plugin-unused-imports": "^4.1.4",
 		"prettier": "^3.2.5"
 	},
-	"packageManager": "pnpm@10.13.1",
+	"packageManager": "pnpm@10.26.1",
 	"pnpm": {
 		"onlyBuiltDependencies": [
 			"@tailwindcss/oxide",

@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { useState, useEffect } from 'react';
 
 const sections = [
 	{ id: 'greetings', label: 'About' },

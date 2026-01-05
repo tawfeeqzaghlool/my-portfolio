@@ -1,7 +1,7 @@
 import Head from 'next/head';
-import { seoData } from '../portfolio';
+import { seoData as defaultSeoData } from '../portfolio';
 
-function SEO() {
+function SEO({ seoData = defaultSeoData }) {
 	return (
 		<Head>
 			<title>{seoData.title}</title>

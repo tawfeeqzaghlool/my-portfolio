@@ -1,7 +1,6 @@
-import React from 'react';
 import { experience } from '../portfolio';
-import ExperienceCard from '../components/ExperienceCard';
 import { Briefcase } from 'lucide-react';
+import ExperienceCard from '../components/ExperienceCard';
 
 const Experience = () => {
 	return (

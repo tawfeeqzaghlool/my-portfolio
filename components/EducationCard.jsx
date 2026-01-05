@@ -1,5 +1,3 @@
-import React from 'react';
-
 const EducationCard = ({ education }) => (
 	<div className="card card-bordered shadow-lg mt-4 w-full max-w-md transition-all duration-200 hover:shadow-xl bg-gradient-to-br from-white via-blue-50 to-blue-100 backdrop-blur-md border border-blue-200">
 		<div className="card-body p-4 gap-2">

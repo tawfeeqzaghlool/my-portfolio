@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
-import { SkillBars } from '../portfolio';
 import { motion } from 'framer-motion';
+import { SkillBars } from '../portfolio';
 import GreetingLottie from '../components/DisplayLottie';
 
 const AnimatedProgressBar = ({ stack, percentage, delay }) => {

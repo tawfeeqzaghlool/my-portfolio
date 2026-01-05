@@ -1,7 +1,7 @@
-import { Icon } from '@iconify/react';
 import React, { Fragment, useState } from 'react';
-import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { Icon } from '@iconify/react';
+import { motion } from 'framer-motion';
 import { skillsSection } from '../portfolio';
 
 const fadeInLeft = {

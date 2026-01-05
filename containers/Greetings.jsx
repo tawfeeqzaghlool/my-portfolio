@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react';
-import { greetings } from '../portfolio';
+import { useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { greetings } from '../portfolio';
+import AnimatedText from '../components/AnimatedText';
 import SocialLinks from '../components/SocialLinks';
 import GreetingLottie from '../components/DisplayLottie';
-import AnimatedText from '../components/AnimatedText';
 
 const fadeIn = {
 	hidden: { opacity: 0, y: 40 },

@@ -1,7 +1,6 @@
-import React from 'react';
-import EducationCard from '../components/EducationCard';
 import { educationInfo } from '../portfolio';
 import { GraduationCap } from 'lucide-react';
+import EducationCard from '../components/EducationCard';
 
 const Education = () => (
 	<section id="education" className="section pb-0">

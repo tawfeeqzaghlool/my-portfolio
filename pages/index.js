@@ -1,4 +1,5 @@
 import dynamic from 'next/dynamic';
+import SEO from '../components/SEO';
 const Navigation = dynamic(() => import('../components/Navigation'));
 const Greetings = dynamic(() => import('../containers/Greetings'));
 const Skills = dynamic(() => import('../containers/Skills'));
@@ -9,7 +10,6 @@ const Projects = dynamic(() => import('../containers/Projects'));
 const Feedbacks = dynamic(() => import('../containers/Feedbacks'));
 const GithubProfileCard = dynamic(() => import('../components/GithubProfileCard'));
 import { openSource, seoData } from '../portfolio';
-import SEO from '../components/SEO';
 
 export default function Home({ githubProfileData }) {
 	return (
