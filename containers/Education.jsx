@@ -1,6 +1,6 @@
-import { educationInfo } from '../portfolio';
-import { GraduationCap } from 'lucide-react';
-import EducationCard from '../components/EducationCard';
+import { GraduationCap } from "lucide-react";
+import EducationCard from "../components/EducationCard";
+import { educationInfo } from "../portfolio";
 
 const Education = () => (
 	<section id="education" className="section pb-0">
@@ -14,12 +14,14 @@ const Education = () => (
 						/>
 					</div>
 					<div className="text-left">
-						<h2 className="section-title text-slate-900">Education & Certificates</h2>
+						<h2 className="section-title text-slate-900">
+							Education & Certificates
+						</h2>
 					</div>
 				</div>
 				<div className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-items-center">
-					{educationInfo.map((info, index) => (
-						<EducationCard education={info} key={index} />
+					{educationInfo.map((info) => (
+						<EducationCard education={info} key={info.schoolName} />
 					))}
 				</div>
 			</div>

@@ -1,7 +1,7 @@
-import React, { useEffect, useRef } from 'react';
-import { motion } from 'framer-motion';
-import { SkillBars } from '../portfolio';
-import GreetingLottie from '../components/DisplayLottie';
+import { motion } from "framer-motion";
+import React, { useEffect, useRef } from "react";
+import GreetingLottie from "../components/DisplayLottie";
+import { SkillBars } from "../portfolio";
 
 const AnimatedProgressBar = ({ stack, percentage, delay }) => {
 	const barRef = useRef(null);
@@ -16,7 +16,7 @@ const AnimatedProgressBar = ({ stack, percentage, delay }) => {
 					observer.disconnect();
 				}
 			},
-			{ threshold: 0.3 }
+			{ threshold: 0.3 },
 		);
 		if (barRef.current) {
 			observer.observe(barRef.current);
@@ -25,12 +25,15 @@ const AnimatedProgressBar = ({ stack, percentage, delay }) => {
 	}, []);
 
 	useEffect(() => {
-		barRef.current && (barRef.current.style.width = '0%');
+		if (barRef.current) {
+			barRef.current.style.width = "0%";
+		}
 		if (inView) {
 			setTimeout(() => {
 				if (barRef.current) {
-					barRef.current.style.transition = 'width 1.5s cubic-bezier(0.4,0,0.2,1)';
-					barRef.current.style.width = percentage + '%';
+					barRef.current.style.transition =
+						"width 1.5s cubic-bezier(0.4,0,0.2,1)";
+					barRef.current.style.width = `${percentage}%`;
 				}
 				// Animate the number
 				const duration = 1500;
@@ -53,12 +56,14 @@ const AnimatedProgressBar = ({ stack, percentage, delay }) => {
 		<div className="progress-info flex flex-col gap-1">
 			<div className="flex justify-between items-center mb-1">
 				<h3 className="text-lg font-semibold text-gray-800">{stack}</h3>
-				<span className="text-sm font-medium text-gray-500">{displayedPercent}%</span>
+				<span className="text-sm font-medium text-gray-500">
+					{displayedPercent}%
+				</span>
 			</div>
 			<div
 				className="w-full bg-gray-200 rounded-full h-4 shadow-inner"
 				role="progressbar"
-				aria-label={stack + ' proficiency'}
+				aria-label={`${stack} proficiency`}
 				aria-valuenow={percentage}
 				aria-valuemin="0"
 				aria-valuemax="100"
@@ -66,7 +71,7 @@ const AnimatedProgressBar = ({ stack, percentage, delay }) => {
 				<div
 					ref={barRef}
 					className="bg-gradient-to-r from-blue-400 to-blue-600 h-4 rounded-full transition-all duration-700"
-					style={{ width: '0%' }}
+					style={{ width: "0%" }}
 				/>
 			</div>
 		</div>
@@ -77,14 +82,14 @@ const containerVariants = {
 	hidden: {},
 	show: {
 		transition: {
-			staggerChildren: 0.2
-		}
-	}
+			staggerChildren: 0.2,
+		},
+	},
 };
 
 const itemVariants = {
 	hidden: { opacity: 0, y: 40 },
-	show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: 'easeOut' } }
+	show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } },
 };
 
 const Proficiency = () => {

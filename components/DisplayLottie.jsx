@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
-import Lottie from 'react-lottie-player';
-import { fetchLottieAnimation } from '../hook/lottieUtils'; // Adjust path if needed
+import { useEffect, useState } from "react";
+import Lottie from "react-lottie-player";
+import { fetchLottieAnimation } from "../hook/lottieUtils"; // Adjust path if needed
 
 const GreetingLottie = ({ animationPath }) => {
 	const [animationData, setAnimationData] = useState(null);
@@ -14,7 +14,7 @@ const GreetingLottie = ({ animationPath }) => {
 				setAnimationData(data);
 			} catch (error) {
 				setError(error);
-				console.error('Error fetching Lottie animation:', error);
+				console.error("Error fetching Lottie animation:", error);
 			}
 		};
 
@@ -26,7 +26,7 @@ const GreetingLottie = ({ animationPath }) => {
 	};
 
 	return (
-		<div onClick={handleClick} className="animation-container">
+		<button type="button" onClick={handleClick} className="animation-container">
 			{error ? (
 				<p>Error loading animation: {error.message}</p>
 			) : (
@@ -38,7 +38,7 @@ const GreetingLottie = ({ animationPath }) => {
 					/>
 				)
 			)}
-		</div>
+		</button>
 	);
 };
 

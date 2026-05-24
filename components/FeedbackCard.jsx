@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
 const FeedbackCard = ({ data }) => (
 	<motion.div
@@ -6,7 +6,7 @@ const FeedbackCard = ({ data }) => (
 		initial={{ opacity: 0, y: 40 }}
 		whileInView={{ opacity: 1, y: 0 }}
 		viewport={{ once: true, amount: 0.2 }}
-		transition={{ duration: 0.7, ease: 'easeOut' }}
+		transition={{ duration: 0.7, ease: "easeOut" }}
 	>
 		<div className="card-body p-4">
 			<span className="absolute top-4 left-4 text-blue-500 text-3xl opacity-10 select-none">
@@ -17,7 +17,7 @@ const FeedbackCard = ({ data }) => (
 				{data.name}
 				{data.projectName && (
 					<>
-						{' '}
+						{" "}
 						on <span className="font-semibold">{data.projectName}</span>
 					</>
 				)}

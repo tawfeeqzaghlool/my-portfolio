@@ -1,4 +1,4 @@
-import { socialLinks } from '../portfolio';
+import { socialLinks } from "../portfolio";
 
 const SocialLinks = () => {
 	return (
@@ -10,7 +10,6 @@ const SocialLinks = () => {
 					rel="noopener"
 					aria-label="Github"
 					target="_blank"
-					role="button"
 				>
 					<i className="fa fa-github" />
 					<span className="btn-inner--text">GitHub</span>
@@ -23,7 +22,6 @@ const SocialLinks = () => {
 					aria-label="Linkedin"
 					href={socialLinks.linkedin}
 					target="_blank"
-					role="button"
 				>
 					<i className="fa fa-linkedin" />
 					<span className="btn-inner--text">LinkedIn</span>

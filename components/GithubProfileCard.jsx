@@ -1,9 +1,9 @@
-import Image from 'next/image';
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
+import Image from "next/image";
 
 const fadeIn = {
 	hidden: { opacity: 0, y: 40 },
-	visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: 'easeOut' } }
+	visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } },
 };
 
 const GithubProfileCard = ({ prof }) => {
@@ -36,10 +36,12 @@ const GithubProfileCard = ({ prof }) => {
 						</div>
 						<div className="col lg:w-2/3 order-lg-1 flex flex-col justify-center">
 							<p className="subtitle text-slate-900 mt-3 text-justify">
-								Braintrust or brainstorm I&apos;m all in! 🧠 Got a project or just a friendly chat?
-								Feel free to reach out! 📩
+								Braintrust or brainstorm I&apos;m all in! 🧠 Got a project or
+								just a friendly chat? Feel free to reach out! 📩
 							</p>
-							<p className="text-base text-slate-900 mt-3 text-justify">{prof.bio}</p>
+							<p className="text-base text-slate-900 mt-3 text-justify">
+								{prof.bio}
+							</p>
 							<div className="btn-wrapper mt-4">
 								<a
 									href={prof.html_url}
@@ -50,7 +52,9 @@ const GithubProfileCard = ({ prof }) => {
 									<span className="btn-inner--text">GitHub</span>
 								</a>
 								<a
-									href={prof.blog || 'https://www.linkedin.com/in/tawfeeqzaghlool'}
+									href={
+										prof.blog || "https://www.linkedin.com/in/tawfeeqzaghlool"
+									}
 									target="_blank"
 									rel="noopener noreferrer"
 									className="btn btn-on-blue flex items-center gap-2"

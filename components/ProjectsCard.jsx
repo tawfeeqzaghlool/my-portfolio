@@ -1,7 +1,7 @@
-import { useState } from 'react';
-import Image from 'next/image';
-import { motion } from 'framer-motion';
-import { ArrowUpRight } from 'lucide-react';
+import { motion } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
+import Image from "next/image";
+import { useState } from "react";
 
 const ProjectsCard = ({ data }) => {
 	const [isModalOpen, setIsModalOpen] = useState(false);
@@ -21,7 +21,7 @@ const ProjectsCard = ({ data }) => {
 			<motion.div
 				whileHover={{ scale: 1.03 }}
 				whileTap={{ scale: 0.98 }}
-				transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+				transition={{ type: "spring", stiffness: 300, damping: 20 }}
 				className="card bg-base-100 shadow-lg rounded-2xl border border-blue-200 overflow-hidden w-full max-w-md min-h-[360px] md:min-h-[400px] flex flex-col"
 			>
 				{/* Card Body */}
@@ -29,16 +29,19 @@ const ProjectsCard = ({ data }) => {
 					<div>
 						<div className="mb-4">
 							<h3 className="card-title text-blue-900">{data.name}</h3>
-							<p className="text-blue-800 leading-relaxed mt-2 text-justify">{data.desc}</p>
+							<p className="text-blue-800 leading-relaxed mt-2 text-justify">
+								{data.desc}
+							</p>
 						</div>
 						<div
-							className={`flex gap-2 w-full ${data.video && data.photo ? '' : 'justify-center'}`}
+							className={`flex gap-2 w-full ${data.video && data.photo ? "" : "justify-center"}`}
 						>
 							{data.video && (
 								<button
-									onClick={() => openModal('video')}
+									type="button"
+									onClick={() => openModal("video")}
 									aria-label={`Open video for ${data.name}`}
-									className={`relative ${data.video && data.photo ? 'w-1/2' : 'w-full'} h-48 rounded-xl overflow-hidden border border-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-500`}
+									className={`relative ${data.video && data.photo ? "w-1/2" : "w-full"} h-48 rounded-xl overflow-hidden border border-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-500`}
 								>
 									<video
 										src={data.video}
@@ -59,15 +62,18 @@ const ProjectsCard = ({ data }) => {
 										/>
 									</video>
 									<div className="absolute inset-0 bg-black bg-opacity-25 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity cursor-pointer rounded-xl">
-										<span className="text-white text-lg font-semibold select-none">View Video</span>
+										<span className="text-white text-lg font-semibold select-none">
+											View Video
+										</span>
 									</div>
 								</button>
 							)}
 							{data.photo && (
 								<button
-									onClick={() => openModal('photo')}
+									type="button"
+									onClick={() => openModal("photo")}
 									aria-label={`Open image for ${data.name}`}
-									className={`relative ${data.video && data.photo ? 'w-1/2' : 'w-full'} h-48 rounded-xl overflow-hidden border border-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-500`}
+									className={`relative ${data.video && data.photo ? "w-1/2" : "w-full"} h-48 rounded-xl overflow-hidden border border-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-500`}
 								>
 									<Image
 										src={data.photo}
@@ -79,7 +85,9 @@ const ProjectsCard = ({ data }) => {
 										className="object-cover rounded-xl"
 									/>
 									<div className="absolute inset-0 bg-black bg-opacity-25 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity cursor-pointer rounded-xl">
-										<span className="text-white text-lg font-semibold select-none">View Image</span>
+										<span className="text-white text-lg font-semibold select-none">
+											View Image
+										</span>
 									</div>
 								</button>
 							)}
@@ -92,9 +100,9 @@ const ProjectsCard = ({ data }) => {
 								target="_blank"
 								rel="noopener noreferrer"
 								className="btn btn-primary gap-2 w-full max-w-xs mx-auto"
-								aria-label={data.linkLabel || 'View Project'}
+								aria-label={data.linkLabel || "View Project"}
 							>
-								{data.linkLabel || 'View Project'}
+								{data.linkLabel || "View Project"}
 								<ArrowUpRight className="w-5 h-5" />
 							</a>
 						</div>
@@ -110,10 +118,16 @@ const ProjectsCard = ({ data }) => {
 					aria-modal="true"
 					aria-labelledby="modal-title"
 					onClick={closeModal} // clicking outside modal closes it
+					onKeyDown={(event) => {
+						if (event.key === "Enter" || event.key === " ") {
+							closeModal();
+						}
+					}}
 				>
 					<div
 						className="relative max-w-4xl max-h-full w-full rounded-lg overflow-hidden shadow-lg bg-white"
 						onClick={(e) => e.stopPropagation()} // prevent modal close when clicking inside
+						role="none"
 					>
 						<button
 							onClick={closeModal}
@@ -125,8 +139,13 @@ const ProjectsCard = ({ data }) => {
 							&times;
 						</button>
 
-						{modalType === 'video' && data.video && (
-							<video src={data.video} controls autoPlay className="w-full h-auto max-h-[80vh]">
+						{modalType === "video" && data.video && (
+							<video
+								src={data.video}
+								controls
+								autoPlay
+								className="w-full h-auto max-h-[80vh]"
+							>
 								{/* TODO: Replace with real captions file for each video */}
 								<track
 									kind="captions"
@@ -137,7 +156,7 @@ const ProjectsCard = ({ data }) => {
 								/>
 							</video>
 						)}
-						{modalType === 'photo' && data.photo && (
+						{modalType === "photo" && data.photo && (
 							<Image
 								src={data.photo}
 								alt={data.name}

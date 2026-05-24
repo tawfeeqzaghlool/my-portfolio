@@ -1,18 +1,18 @@
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
 const container = {
 	hidden: { opacity: 1 },
 	visible: {
 		opacity: 1,
 		transition: {
-			staggerChildren: 0.08
-		}
-	}
+			staggerChildren: 0.08,
+		},
+	},
 };
 
 const child = {
 	hidden: { opacity: 0, y: 20 },
-	visible: { opacity: 1, y: 0 }
+	visible: { opacity: 1, y: 0 },
 };
 
 export default function AnimatedText({ text, className }) {
@@ -22,10 +22,10 @@ export default function AnimatedText({ text, className }) {
 			variants={container}
 			initial="hidden"
 			animate="visible"
-			style={{ display: 'flex', flexWrap: 'wrap', gap: '0.3em' }}
+			style={{ display: "flex", flexWrap: "wrap", gap: "0.3em" }}
 		>
-			{text.split(' ').map((word, i) => (
-				<motion.span key={i} variants={child}>
+			{text.split(" ").map((word) => (
+				<motion.span key={word} variants={child}>
 					{word}
 				</motion.span>
 			))}

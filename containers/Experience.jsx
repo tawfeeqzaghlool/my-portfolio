@@ -1,6 +1,6 @@
-import { experience } from '../portfolio';
-import { Briefcase } from 'lucide-react';
-import ExperienceCard from '../components/ExperienceCard';
+import { Briefcase } from "lucide-react";
+import ExperienceCard from "../components/ExperienceCard";
+import { experience } from "../portfolio";
 
 const Experience = () => {
 	return (
@@ -18,9 +18,12 @@ const Experience = () => {
 							<h2 className="section-title">Experience</h2>
 						</div>
 					</div>
-					<div className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-items-center">
-						{experience.map((data, i) => (
-							<ExperienceCard key={i} data={data} />
+					<div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-12 justify-items-center">
+						{experience.map((data) => (
+							<ExperienceCard
+								key={`${data.company}-${data.role}`}
+								data={data}
+							/>
 						))}
 					</div>
 				</div>

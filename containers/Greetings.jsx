@@ -1,13 +1,13 @@
-import { useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { greetings } from '../portfolio';
-import AnimatedText from '../components/AnimatedText';
-import SocialLinks from '../components/SocialLinks';
-import GreetingLottie from '../components/DisplayLottie';
+import { motion } from "framer-motion";
+import { useEffect } from "react";
+import AnimatedText from "../components/AnimatedText";
+import GreetingLottie from "../components/DisplayLottie";
+import SocialLinks from "../components/SocialLinks";
+import { greetings } from "../portfolio";
 
 const fadeIn = {
 	hidden: { opacity: 0, y: 40 },
-	visible: { opacity: 1, y: 0, transition: { duration: 1, ease: 'easeOut' } }
+	visible: { opacity: 1, y: 0, transition: { duration: 1, ease: "easeOut" } },
 };
 
 const Greetings = () => {
@@ -19,7 +19,10 @@ const Greetings = () => {
 	return (
 		<main>
 			<div className="position-relative">
-				<section id="greetings" className="section section-shaped py-8 md:py-12">
+				<section
+					id="greetings"
+					className="section section-shaped py-8 md:py-12"
+				>
 					<div className="bg-smooth w-full py-8 md:py-12">
 						<div className="container py-lg-md">
 							<div className="flex flex-col-reverse lg:flex-row items-center gap-8">
@@ -54,7 +57,9 @@ const Greetings = () => {
 													<span className="btn-inner--icon">
 														<i className="fa fa-file" />
 													</span>
-													<span className="btn-inner--text">View My Resume</span>
+													<span className="btn-inner--text">
+														View My Resume
+													</span>
 												</a>
 											</div>
 										</div>

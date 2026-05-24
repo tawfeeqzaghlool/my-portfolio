@@ -1,0 +1,17 @@
+{
+	"root": true,
+	"files": {
+		"includes": ["**/*.{js,jsx,json,md}", "!node_modules", "!.next"]
+	},
+	"formatter": {
+		"enabled": true
+	},
+	"linter": {
+		"enabled": true
+	},
+	"javascript": {
+		"parser": {
+			"jsxEverywhere": true
+		}
+	}
+}

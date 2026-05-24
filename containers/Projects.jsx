@@ -1,6 +1,6 @@
-import { projects } from '../portfolio';
-import { Laptop } from 'lucide-react';
-import ProjectsCard from '../components/ProjectsCard';
+import { Laptop } from "lucide-react";
+import ProjectsCard from "../components/ProjectsCard";
+import { projects } from "../portfolio";
 
 const Projects = () => {
 	return (
@@ -20,8 +20,8 @@ const Projects = () => {
 						</div>
 					</div>
 					<div className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-items-center">
-						{projects.map((data, i) => (
-							<ProjectsCard key={i} data={data} />
+						{projects.map((data) => (
+							<ProjectsCard key={data.name} data={data} />
 						))}
 					</div>
 				</div>

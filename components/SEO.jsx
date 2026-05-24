@@ -1,5 +1,5 @@
-import Head from 'next/head';
-import { seoData as defaultSeoData } from '../portfolio';
+import Head from "next/head";
+import { seoData as defaultSeoData } from "../portfolio";
 
 function SEO({ seoData = defaultSeoData }) {
 	return (
@@ -8,7 +8,7 @@ function SEO({ seoData = defaultSeoData }) {
 			<meta name="title" content={seoData.title} />
 			<meta name="author" content={seoData.author} />
 			<meta name="description" content={seoData.description} />
-			<meta name="keywords" content={seoData.keywords.join(', ')} />
+			<meta name="keywords" content={seoData.keywords.join(", ")} />
 			<link rel="canonical" href={seoData.url} />
 
 			{/* Favicon */}
