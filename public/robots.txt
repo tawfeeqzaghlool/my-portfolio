@@ -1,9 +1,0 @@
-# *
-User-agent: *
-Allow: /
-
-# Host
-Host: https://tawfeeqzaghlool.site
-
-# Sitemaps
-Sitemap: https://tawfeeqzaghlool.site/sitemap.xml
